@@ -6,13 +6,6 @@ use Illuminate\Http\Request;
 
 class Collection extends Controller
 {
-	public function mess(){
-   		return view('layouts.master.layout');
-   	}
-   
-    public function mess(){
-   		return view('layouts.master.layout');
-    }
 
     public function collection_add(){
    		return view('layouts.collection.collection_add');

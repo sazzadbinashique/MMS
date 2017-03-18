@@ -1,6 +1,6 @@
 @extends('layouts.master.layout')
 
-@section('title','')
+@section('title','Collection Add')
 
 @section('content')
             <div class="row">

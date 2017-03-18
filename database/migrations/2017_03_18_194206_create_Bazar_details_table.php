@@ -4,8 +4,13 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CraeteBazarDetailsTable extends Migration
+class CreateBazarDetailsTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('Bazar_details', function (Blueprint $table) {
@@ -18,6 +23,11 @@ class CraeteBazarDetailsTable extends Migration
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('Bazar_details');

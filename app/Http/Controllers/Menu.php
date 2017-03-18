@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 class Menu extends Controller
 {
-	public function mess(){
-   		return view('layouts.master.layout');
-   	}
+	
    	
     public function menu_add(){
     	return view('layouts.menu.menu_add');
