@@ -11,7 +11,7 @@ class CreateCollectionTable extends Migration
         Schema::create('Collection', function (Blueprint $table) {
             $table->increments('id');
              $table->integer('user_id')->unsigned();
-             $table->decimal('amount', 8, 6);
+             $table->string('amount');
              $table->dateTime('date');
              // $table->integer('total');
             $table->timestamps();
