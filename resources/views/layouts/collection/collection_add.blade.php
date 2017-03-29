@@ -10,7 +10,7 @@
                 </div>
                 <!--End Page Header -->
             </div>
-@include('flash::message')
+<!-- @include('flash::message') -->
                 <div class="row">
                 <div class="col-lg-12">
                     <!-- Form Elements -->

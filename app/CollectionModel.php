@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Input;
+use Carbon\Carbon;
 
 class CollectionModel extends Model
 {
@@ -17,4 +19,11 @@ class CollectionModel extends Model
      */
     
     protected $fillable = ['user_id','amount', 'date','created_at','updated_at'];
+
+
+    public function collection_name(){
+        return $this->belongsTo('App\User', 'user_id','id');
+    }
+
+    dd(query);
 }

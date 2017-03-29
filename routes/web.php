@@ -18,10 +18,10 @@ Route::get('/', function () {
 
 /* ============== Collection 
 ========================================== */
-Route::get('/collection_list', ['uses' => 'Collection@collection_list']);
+Route::post('/collection_add/{id}', ['uses' => 'Collection@collection_add']);
 Route::post('/collection_add', ['uses' => 'Collection@collection_add']);
 Route::get('/collection_add', ['uses' => 'Collection@collection_add']);
-
+Route::get('/collection_list', ['uses' => 'Collection@collection_list']);
 
 /* ============== Additional 
 ========================================== */

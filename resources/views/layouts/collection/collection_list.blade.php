@@ -26,17 +26,18 @@
                                 <th>Name</th>
                                 <th>Amount</th>
                                 <th>Date</th>
-                                <th>Total</th>
+                                <!-- <th>Total</th> -->
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($collection_lists as $collection_list)
                             <tr>
-                                <td>1</td>
-                                <td>ssssdddd</td>
-                                <td>100</td>
-                                <td>12-1-2017</td>
-                                <td>500</td>
+                                <td>{{$collection_list->id}}</td>
+                                <td>{{$collection_list->user_id}}</td>
+                                <td>{{$collection_list->amount}}</td>
+                                <td>{{$collection_list->date}}</td>
+                                <!-- <td>500</td> -->
                                 <td class="text-center">
                                     <div class="btn-group text-center"> 
                                         <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -44,13 +45,15 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">Edit</a>
+                                            {!! link_to('/collection_add/'.$collection_list->id, 'Edit') !!}
+                                                <!-- <a href="#">Edit</a> -->
                                             </li> 
                                         </ul>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
+                             @endforeach
+                            <!-- <tr>
                                 <td>2</td>
                                 <td>wwwwww</td>
                                 <td>100</td>
@@ -87,7 +90,7 @@
                                         </ul>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>

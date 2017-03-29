@@ -73,6 +73,13 @@ class Collection extends Controller
    	
 
    	public function collection_list(){
-   		return view('layouts.collection.collection_list');
+
+      $collection_lists = DB::table('Collection')->get();
+      // dd($collection_lists);
+      $user_names = User::pluck('name', 'id');
+
+      // dd($user_names);
+   		return view('layouts.collection.collection_list', ['collection_lists'=>$collection_lists, 'user_names'=>
+        $user_names]);
    	}
 }
