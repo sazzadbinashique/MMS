@@ -64,7 +64,10 @@ class Collection extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $collection_add = $collection_model->create($request->instance()->all());
             } else {
-                
+                $collection = CollectionModel::find($request->id);
+                $request->offsetSet('updated_at', Carbon::now());
+                $collection->update($request->all());
+                Flash::success('Successfully updated a collction ');
             }
             return true;
         }
@@ -76,10 +79,10 @@ class Collection extends Controller
 
       $collection_lists = DB::table('Collection')->get();
       // dd($collection_lists);
-      $user_names = User::pluck('name', 'id');
+      $member_names = User::pluck('name', 'id');
 
       // dd($user_names);
-   		return view('layouts.collection.collection_list', ['collection_lists'=>$collection_lists, 'user_names'=>
-        $user_names]);
+   		return view('layouts.collection.collection_list', ['collection_lists'=>$collection_lists, 'member_names'=>
+        $member_names]);
    	}
 }

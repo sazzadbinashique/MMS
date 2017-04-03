@@ -26,7 +26,6 @@
                                 <th>Name</th>
                                 <th>Amount</th>
                                 <th>Date</th>
-                                <!-- <th>Total</th> -->
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>

@@ -153,8 +153,8 @@
     <script src="{{asset('assets/scripts/siminta.js')}}"></script>
     <!-- Page-Level Plugin Scripts-->
     <script src="{{asset('assets/plugins/morris/raphael-2.1.0.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/morris/morris.js')}}"></script>
-    <script src="{{asset('assets/scripts/dashboard-demo.js')}}"></script>
+    <!-- <script src="{{asset('assets/plugins/morris/morris.js')}}"></script> -->
+    <!-- <script src="{{asset('assets/scripts/dashboard-demo.js')}}"></script> -->
 
 </body>
 
