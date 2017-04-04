@@ -1,4 +1,4 @@
-<!-- navbar top -->
+navbar top -->
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
             <!-- navbar-header -->
             <div class="navbar-header">
@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{url('/')}}">
-                    <img src="assets/img/logo.png" alt="" />
+                    <img src="{{asset('assets/img/logo.png')}}" alt="" />
                 </a>
             </div>
             <!-- end navbar-header -->
@@ -38,4 +38,4 @@
             <!-- end navbar-top-links -->
 
         </nav>
-        <!-- end navbar top -->
+        <!-- end navbar top

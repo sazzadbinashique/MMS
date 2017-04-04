@@ -20,7 +20,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-6">
-                            @include('flash::message')
+                        @include('flash::message')
                         {!! Form::model($collection, array('method'=>'POST', 'url' => '/collection_add', 'role'=>"form")) !!}
                         {{ Form::hidden('id') }}
                             <div class="form-group">

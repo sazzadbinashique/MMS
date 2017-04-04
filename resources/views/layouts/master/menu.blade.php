@@ -8,7 +8,7 @@
                         <!-- user image section-->
                         <div class="user-section">
                             <div class="user-section-inner">
-                                <img src="assets/img/user.jpg" alt="">
+                                <img src="{{asset('assets/img/user.jpg')}}" alt="">
                             </div>
                             <div class="user-info">
                                 <div>Jahir <strong>Shamim</strong></div>

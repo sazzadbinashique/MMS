@@ -38,7 +38,7 @@ class Collection extends Controller
         if($request->isMethod('post')){
              if($this->save_collection($request, $collection)){    
                 Flash::success('Succesfully create a new Collection');
-                return redirect()->to('/collection_add');
+                return redirect()->to('/collection_list');
             }
         }
 
@@ -77,7 +77,8 @@ class Collection extends Controller
 
    	public function collection_list(){
 
-      $collection_lists = DB::table('Collection')->get();
+      // $collection_lists = DB::table('Collection')->get();
+      $collection_lists = CollectionModel::all();
       // dd($collection_lists);
       $member_names = User::pluck('name', 'id');
 
