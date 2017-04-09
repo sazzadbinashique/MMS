@@ -33,7 +33,7 @@ class Collection extends Controller
         	CollectionModel::where(['id'=>$request->id])->first()->toArray():
             new CollectionModel();
         
-        
+        // dd($collection);
         
         if($request->isMethod('post')){
              if($this->save_collection($request, $collection)){    
@@ -45,6 +45,7 @@ class Collection extends Controller
 
     	$member_names = User::pluck('name', 'id');
     	
+      // dd($member_names);
     	//$collection = $request->all();
    
 
@@ -59,7 +60,7 @@ class Collection extends Controller
             return false;           // dd('Flash::error');
         }  else {
             $input = $request->all(); 
-            //dd($input);
+            // dd($input);
             if (empty($request->id)) {
                 $request->offsetSet('created_at', Carbon::now());
                 $collection_add = $collection_model->create($request->instance()->all());

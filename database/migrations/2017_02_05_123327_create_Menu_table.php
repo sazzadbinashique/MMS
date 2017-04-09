@@ -10,7 +10,7 @@ class CreateMenuTable extends Migration
     {
         Schema::create('Menu', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('menu_item');
+            $table->string('menu_item');
             $table->timestamps();
         });
     }

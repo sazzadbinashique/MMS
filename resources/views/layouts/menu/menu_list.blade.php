@@ -29,9 +29,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($menu_lists as $menu_list)
                             <tr>
-                                <td>1</td>
-                                <td>ssssdddd</td>
+                                <td>{{$menu_list->id}}</td>
+                                <td>{{$menu_list->menu_item}}</td>
                                 <td class="text-center">
                                     <div class="btn-group text-center"> 
                                         <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -39,13 +40,15 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">Edit</a>
+                                            {!! link_to('/menu_add/'.$menu_list->id, 'Edit') !!}
+                                                <!-- <a href="#">Edit</a> -->
                                             </li> 
                                         </ul>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
+                            @endforeach
+                            <!-- <tr>
                                 <td>2</td>
                                 <td>wwwwww</td>
                                 <td class="text-center">
@@ -76,7 +79,7 @@
                                         </ul>
                                     </div>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>

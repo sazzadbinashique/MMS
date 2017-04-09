@@ -22,16 +22,22 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
+                                @include('flash::message')
+                                {!! Form::model($menu , array('method'=>'POST', 'url' => '/menu_add', 'role'=>"form")) !!}
+                                {{ Form::hidden('id') }}
+                                   <!--  <form role="form"> -->
                                         <div class="form-group">
                                             <label>Menu Name:</label>
-                                            <input class="form-control" type="text" name="department_name">
+                                             {!! Form::text("menu_item", null, ['class' => 'form-control', 'placeholder'=> 'menu_name...', 'id'=>'menu_item', 'value'=> old('menu_item'),]) !!}
+                                            <!-- <input class="form-control" type="text" name="department_name"> -->
                                         </div>   
                                         <div class="col-lg-6 col-lg-push-8">
                                             <button type="submit" class="btn btn-primary">Submit </button>
                                             <button type="reset" class="btn btn-success">Reset </button>
                                         </div>
-                                    </form>
+                                         {!! Form::close() !!}
+
+                                    <!-- </form> -->
                                 </div>
                             </div>
                         </div>
