@@ -33,16 +33,16 @@
                                     <option>Empsdfs_Name</option>
                                     <option>Emp_dfName</option>
                                 </select> -->
-                                {!! Form::select('user_id', $member_names, null, ['placeholder' => 'Add Name','id'=>'user_id','class'=>'form-control']) !!}
+                                {!! Form::select('user_id', $member_names, null, ['placeholder' => 'Add Your Name','id'=>'user_id','class'=>'form-control']) !!}
                             </div>
                             <div class="form-group">
                                 <label for="amount" >Collection Amount: </label>
-                                {!! Form::number("amount", null, ['class' => 'form-control', 'placeholder'=> 'Amount...', 'id'=>'amount', 'value'=> old('amount'),]) !!}
+                                {!! Form::number("amount", null, ['class' => 'form-control', 'placeholder'=> 'Enter Your Amount...', 'id'=>'amount', 'value'=> old('amount'),]) !!}
                                 <!-- <input class="form-control" type="number" name="amount" id="amount 'value'=> old('amount'),"> -->
                             </div> 
                              <div class="form-group">
                                 <label for="date"> Collection Date: </label>
-                                {!! Form::date("date", null, ['class' => 'form-control', 'placeholder'=> 'Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
+                                {!! Form::date("date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
                                 <!-- <input class="form-control" type="date" name="date" id="date"> -->
                             </div> 
                                 
