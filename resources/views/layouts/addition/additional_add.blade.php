@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         @include('flash::message')
-                        {!! Form::model( array('method'=>'POST', 'url' => '/additional_add', 'role'=>"form")) !!}
+                        {!! Form::model($additional, array('method'=>'POST', 'url' => '/additional_add', 'role'=>"form")) !!}
                         {{ Form::hidden('id') }}
                             <div class="row">
                                 <div class="col-lg-6">
@@ -39,12 +39,14 @@
                                         {!! Form::select('extra_item_id', $extra_item_names, null, ['placeholder' => 'Add Your Name','id'=>'extra_item_id','class'=>'form-control']) !!}
                                     </div>
                                     <div class="form-group">
-                                        <label> Date: </label>
-                                        <input class="form-control" type="date" name="department_name">
+                                        <label> Enter Date: </label>
+                                        {!! Form::date("date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
+                                        <!--<input class="form-control" type="date" name="department_name">-->
                                     </div> 
                                     <div class="form-group">
-                                        <label> Amount: </label>
-                                        <input class="form-control" type="text" name="department_name">
+                                        <label> Extra Amount: </label>
+                                         {!! Form::number("extra_amount", null, ['class' => 'form-control', 'placeholder'=> 'Enter Extra Amount...', 'id'=>'extra_amount', 'value'=> old('extra_amount'),]) !!}
+                                        <!--<input class="form-control" type="text" name="department_name">-->
                                     </div>  
 
                                     <div class="col-lg-12 col-lg-push-8">

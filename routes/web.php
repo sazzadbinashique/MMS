@@ -25,8 +25,10 @@ Route::get('/collection_list', ['uses' => 'Collection@collection_list']);
 
 /* ============== Additional 
 ========================================== */
-Route::get('/additional_list', ['uses'=>'Addition@additional_list']);
+Route::get('/additional_add/{id}', ['uses'=>'Addition@additional_add']);
+Route::post('/additional_add', ['uses'=>'Addition@additional_add']);
 Route::get('/additional_add', ['uses'=>'Addition@additional_add']);
+Route::get('/additional_list', ['uses'=>'Addition@additional_list']);
 
 
 /* ============== Bazar 

@@ -11,7 +11,7 @@
        	<!-- end  page header -->
 </div>
 <div class="row">
-	<div class="col-lg-12">
+    <div class="col-lg-12">
 		<!--   Kitchen Sink -->
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -20,7 +20,7 @@
         </div>
     </div>
 </div>
-<div class="panel-body">
+<div class="panel panel-body">
      <div class="table-responsive">
     	<table class="table table-striped table-bordered table-hover">
         	<thead>

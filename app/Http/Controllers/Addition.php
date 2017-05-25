@@ -17,6 +17,11 @@ use Session;
 
 class Addition extends Controller
 {
+    	private $rules_additional = [
+       'extra_item_id' => 'required',
+       'date' => 'required',
+       'extra_amount' => 'required',
+    ];
 	
     public function additional_add(Request $request){
 
@@ -38,6 +43,29 @@ class Addition extends Controller
     	
    		return view('layouts.addition.additional_add', compact('additional','extra_item_names'));
    	}
+        
+        
+      public function save_additional(Request $request, $additional_model){
+        $validator =Validator::make($request->all(), $this->rules_additional);//dd($validator);
+        if($validator->fails()){
+             Flash::error(Utilities::errors($validator));           //dd('here');
+            return false;           // dd('Flash::error');
+        }  else {
+            $input = $request->all(); 
+            // dd($input);
+            if (empty($request->id)) {
+                $request->offsetSet('created_at', Carbon::now());
+                $additional_add = $additional_model->create($request->instance()->all());
+            } else {
+                $additional = AdditionalModel::find($request->id);
+                $request->offsetSet('updated_at', Carbon::now());
+                $additional->update($request->all());
+                Flash::success('Successfully updated a Additional ');
+            }
+            return true;
+        }
+    }
+    
        
 
   public function additional_list(){
