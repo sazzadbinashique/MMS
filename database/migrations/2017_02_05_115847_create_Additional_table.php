@@ -13,7 +13,6 @@ class CreateAdditionalTable extends Migration
              $table->integer('extra_item_id')->unsigned();
              $table->dateTime('date');
             $table->string('extra_amount');
-            // $table->string('total'); 
             $table->timestamps();
         });
     }

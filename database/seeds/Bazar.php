@@ -11,6 +11,6 @@ class Bazar extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }

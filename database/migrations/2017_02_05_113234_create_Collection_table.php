@@ -13,7 +13,6 @@ class CreateCollectionTable extends Migration
              $table->integer('user_id')->unsigned();
              $table->string('amount');
              $table->dateTime('date');
-             // $table->integer('total');
             $table->timestamps();
         });
     }
