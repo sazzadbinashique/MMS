@@ -33,14 +33,18 @@ Route::get('/additional_add', ['uses'=>'Addition@additional_add']);
 ========================================== */
 Route::get('/bazar_list', ['uses'=>'Bazar@bazar_list']);
 Route::get('/bazar_add', ['uses'=>'Bazar@bazar_add']);
+
+
 Route::get('/bazar_details_list', ['uses'=>'Bazar@bazar_details_list']);
 Route::get('/bazar_details_add', ['uses'=>'Bazar@bazar_details_add']);
 
 
 /* ============== Extra Item  
 ========================================== */
-Route::get('/extra_item_list', ['uses'=> 'Extra@extra_item_list']);
+Route::get('/extra_item_add/{id}', ['uses'=> 'Extra@extra_item_add']);
+Route::post('/extra_item_add', ['uses'=> 'Extra@extra_item_add']);
 Route::get('/extra_item_add', ['uses'=> 'Extra@extra_item_add']);
+Route::get('/extra_item_list', ['uses'=> 'Extra@extra_item_list']);
 
 
 /* ============== Meal 

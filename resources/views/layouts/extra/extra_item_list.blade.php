@@ -29,9 +29,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($extra_lists as $extra_list)
                             <tr>
-                                <td>1</td>
-                                <td>ssssdddd</td>
+                                <td>{{$extra_list->id}}</td>
+                                <td>{{$extra_list->extra_item}}</td>
                                 <td class="text-center">
                                     <div class="btn-group text-center"> 
                                         <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -39,44 +40,14 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">Edit</a>
+                                                {!! link_to('/extra_item_add/'.$extra_list->id, 'Edit') !!}
+                                                <!--<a href="#">Edit</a>-->
                                             </li> 
                                         </ul>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>wwwwww</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>dddqqqq</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
