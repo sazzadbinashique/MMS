@@ -36,10 +36,7 @@ class Menu extends Controller
                 Flash::success('Succesfully create a new Menu');
                 return redirect()->to('/menu_list');
             }
-
         }
-
-
     	return view('layouts.menu.menu_add', compact('menu'));
     }
 

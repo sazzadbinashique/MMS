@@ -17,47 +17,51 @@ use Session;
 
 class Extra extends Controller
 {
+       private $rules_extra = [
+       
+       'extra_item' => 'required',
+    ];
 	
    	
-    public function extra_item_add(){
+    public function extra_item_add(Request $request){
         
-    	return view('layouts.extra.extra_item_add');
-    }
-    
-    public function extra_item_store(Request $request){
-        // validate
-        $rules = array(
-            'extra_item'=> 'required'
-        );
-        $validator = Validator::make($request::all(), $rules);
-        //dd(here);
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('/extra_item_add')
-                ->withErrors($validator)
-                ->withInput(Input::except('extra_item'));
-        } else {
-            // store
-            $extra_store = new ExtraItemModel;
-            $extra_store->extra_item= Input::get('extra_item');
-            $extra_store->save();
-            //dd($extra_store);
+        $extra = !empty($request->id)?
+        	ExtraItemModel::where(['id'=>$request->id])->first()->toArray():
+            new ExtraItemModel();
+            //dd($extra);
 
-            // redirect
-            Session::flash('message', 'Successfully created Extra _item!');
-            return Redirect::to('/extra_item_add');
+             if($request->isMethod('post')){
+             if($this->save_extra_item($request, $extra)){    
+                Flash::success('Succesfully create a new Menu');
+                return redirect()->to('/extra_item_list');
+            }
+         	
         }
+        
+        return view('layouts.extra.extra_item_add', compact('extra'));
     }
     
-    public function extra_item_edit($id){
-        // get the nerd
-        $extra_item_show = ExtraItemModel::find($id);
-        //dd($extra_item_show);
-        // show the view and pass the nerd to it
-        return view('layouts.extra.extra_item_add');
-    }
-     public function extra_item_update(){
-        
+
+
+    public function save_extra_item(Request $request, $extra_model){
+        $validator =Validator::make($request->all(), $this->rules_extra);//dd($validator);
+        if($validator->fails()){
+             Flash::error(Utilities::errors($validator));           //dd('here');
+            return false;            //dd('Flash::error');
+        }  else {
+            $input = $request->all(); 
+            // dd($input);
+            if (empty($request->id)) {
+                $request->offsetSet('created_at', Carbon::now());
+                $extra_item_add = $extra_model->create($request->instance()->all());
+            } else {
+                $extra = ExtraItemModel::find($request->id);
+                $request->offsetSet('updated_at', Carbon::now());
+                $extra->update($request->all());
+                Flash::success('Successfully updated a Extra ');
+             }
+            return true;
+        }
     }
     
 
@@ -69,7 +73,5 @@ class Extra extends Controller
     	return view('layouts.extra.extra_item_list', ['extra_lists'=>$extra_lists]);
     }
     
-    public function extra_item_delete(){
-        
-    }
+    
 }

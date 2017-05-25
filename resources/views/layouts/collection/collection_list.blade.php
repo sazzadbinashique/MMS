@@ -53,44 +53,6 @@
                     </td>
                 </tr>
                  @endforeach
-                <!-- <tr>
-                    <td>2</td>
-                    <td>wwwwww</td>
-                    <td>100</td>
-                    <td>12-1-2017</td>
-                    <td>500</td>
-                    <td class="text-center">
-                        <div class="btn-group text-center"> 
-                            <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                Active<span class="caret ml5"></span>
-                            </button>
-                            <ul class="dropdown-menu pull-right" role="menu">
-                                <li>
-                                    <a href="#">Edit</a>
-                                </li> 
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>dddqqqq</td>
-                    <td>100</td>
-                    <td>12-1-2017</td>
-                    <td>500</td>
-                    <td class="text-center">
-                        <div class="btn-group text-center"> 
-                            <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                Active<span class="caret ml5"></span>
-                            </button>
-                            <ul class="dropdown-menu pull-right" role="menu">
-                                <li>
-                                    <a href="#">Edit</a>
-                                </li> 
-                            </ul>
-                        </div>
-                    </td>
-                </tr> -->
             </tbody>
         </table>
     </div>

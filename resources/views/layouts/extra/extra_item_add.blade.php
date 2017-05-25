@@ -23,15 +23,16 @@
                 <div class="row">
                     <div class="col-lg-6">
                         @include('flash::message')
-                        {!! Form::model(array('method'=>'POST', 'url' => '/extra_item_add', 'role'=>"form")) !!}
+                        {!! Form::model($extra, array('method'=>'POST', 'url' => '/extra_item_add', 'role'=>"form")) !!}
+                        {{ Form::hidden('id') }}
                         <div class="form-group">
-                            {{ Form::label('extra_item', 'Extra Item Name') }}
-                            {!! Form::text("extra_item", null, ['class' => 'form-control', 'placeholder'=> 'menu_name...', 'id'=>'extra_item', 'value'=> old('extra_item'),]) !!}                        </div>   
+                            <label>Extra Item Name:</label>
+                            {!! Form::text("extra_item", null, ['class' => 'form-control', 'placeholder'=> 'menu_name...', 'id'=>'extra_item', 'value'=> old('extra_item')]) !!}                        </div>   
                         <div class="col-lg-6 col-lg-push-8">
                             <button type="submit" class="btn btn-primary">Submit </button>
                             <button type="reset" class="btn btn-success">Reset </button>
                         </div>
-                        {{ Form::close() }}
+                       {!! Form::close() !!}
                     </div>
                 </div>
             </div>
