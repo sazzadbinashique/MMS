@@ -17,6 +17,6 @@ class Extra_item extends Seeder
             ['id'=>3 , 'extra_item'=>'Moyla'],
             ['id'=>4 , 'extra_item'=>'Paper'],
         ];
-        DB:table('Extra_item')->insert($extra_item_data);
+        DB::table('Extra_item')->insert($extra_item_data);
     }
 }

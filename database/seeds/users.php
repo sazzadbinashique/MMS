@@ -12,7 +12,10 @@ class users extends Seeder
     public function run()
     {
         $userdata=[
-            [ 'id'=>4, 'name'=>'Sumon Ali', 'email'=> 'sumonali@gmail.com', 'password'=>123456],
+            [ 'id'=>1, 'name'=>'Sazzad Bin Ashique', 'email'=> 'sazzad@gmail.com', 'password'=>123456],
+            [ 'id'=>2, 'name'=>'Sumon Ali', 'email'=> 'sumonali@gmail.com', 'password'=>123456],
+            [ 'id'=>3, 'name'=>'Sumon Ahmed', 'email'=> 'sumon@gmail.com', 'password'=>123456],
+            [ 'id'=>4, 'name'=>'Rustom Ali', 'email'=> 'rustom@gmail.com', 'password'=>123456],
             
         ];
         

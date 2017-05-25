@@ -14,10 +14,10 @@ class Collection extends Seeder
     {
         $current = Carbon::now();
         $collectiondata=[
-            [ 'id'=>1, 'user_id'=>1, 'amount'=> 200, 'date'=>Carbon::now(), 'total'=> 200],
+            [ 'id'=>1, 'user_id'=>1, 'amount'=> 2000, 'date'=>Carbon::now()],
             
         ];
         
-        DB::table('collection')->insert($collectiondata);
+        DB::table('Collection')->insert($collectiondata);
     }
 }
