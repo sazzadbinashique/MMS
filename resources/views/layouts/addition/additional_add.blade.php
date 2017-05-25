@@ -21,19 +21,22 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form role="form">
+                        @include('flash::message')
+                        {!! Form::model( array('method'=>'POST', 'url' => '/additional_add', 'role'=>"form")) !!}
+                        {{ Form::hidden('id') }}
                             <div class="row">
                                 <div class="col-lg-6">
-									<div class="form-group">
+                                    <div class="form-group">
                                         <label> Item Name: </label>
-                                        <select class="form-control">
+<!--                                        <select class="form-control">
                     	                    <option selected="selected" value="">--- Add Name---</option>
                                             <option>Ssdsdfsdf</option>
                                             <option>sdfdd ddd </option>
                                             <option>Shovsdson vai </option>
                                             <option>Empsdfs_Name</option>
                                             <option>Emp_dfName</option>
-                                        </select>
+                                        </select>-->
+                                        {!! Form::select('extra_item_id', $extra_item_names, null, ['placeholder' => 'Add Your Name','id'=>'extra_item_id','class'=>'form-control']) !!}
                                     </div>
                                     <div class="form-group">
                                         <label> Date: </label>
@@ -50,7 +53,7 @@
                                     </div>
                                 </div>             
                             </div> 
-                        </form>
+                       {!! Form::close() !!}
                     </div>
 	            </div>
             </div>

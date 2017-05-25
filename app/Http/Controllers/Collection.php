@@ -53,7 +53,7 @@ class Collection extends Controller
    	}
 
 
-   	  public function save_collection(Request $request, $collection_model){
+   public function save_collection(Request $request, $collection_model){
         $validator =Validator::make($request->all(), $this->rules_collection);//dd($validator);
         if($validator->fails()){
              Flash::error(Utilities::errors($validator));           //dd('here');
