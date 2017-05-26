@@ -21,34 +21,22 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form role="form">
+                        @include('flash::message')
+                        {!! Form::model($bazar, array('method'=>'POST', 'url' => '/bazar_add', 'role'=>"form")) !!}
+                        {{ Form::hidden('id') }}
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label> Item Name: </label>
-                                         <select class="form-control">
-                                            <option selected="selected" value="">--- Add Name---</option>
-                                            <option>Ssdsdfsdf</option>
-                                            <option>sdfdd ddd </option>
-                                            <option>Shovsdson vai </option>
-                                            <option>Empsdfs_Name</option>
-                                            <option>Emp_dfName</option>
-                                        </select>
+                                        {!! Form::select('user_id', $user_names, null, ['placeholder' => 'Add Your Name','id'=>'user_id','class'=>'form-control']) !!}
                                     </div>
                                     <div class="form-group">
                                         <label> Month Name: </label>
-                                        <select class="form-control">
-                                            <option selected="selected" value="">--- Add Name---</option>
-                                            <option>January</option>
-                                            <option>sdfsf </option>
-                                            <option>Shovsdson vai </option>
-                                            <option>Empsdfs_Name</option>
-                                            <option>Emp_dfName</option>
-                                        </select>
+                                         {!! Form::select('Month_id', $month_names, null, ['placeholder' => 'Add Your Name','id'=>'Month_id','class'=>'form-control']) !!}
                                     </div>
                                     <div class="form-group">
                                         <label> Expected Date: </label>
-                                        <input class="form-control" type="date" name="department_name">
+                                        {!! Form::date("Expected_date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'Expected_date', 'value'=> old('Expected_date'),]) !!}
                                     </div> 
                                     <div class="col-lg-12 col-lg-push-8">
                                         <button type="submit" class="btn btn-primary">Submit </button>

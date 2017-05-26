@@ -33,8 +33,10 @@ Route::get('/additional_list', ['uses'=>'Addition@additional_list']);
 
 /* ============== Bazar 
 ========================================== */
-Route::get('/bazar_list', ['uses'=>'Bazar@bazar_list']);
+Route::get('/bazar_add/{id}', ['uses'=>'Bazar@bazar_add']);
+Route::post('/bazar_add', ['uses'=>'Bazar@bazar_add']);
 Route::get('/bazar_add', ['uses'=>'Bazar@bazar_add']);
+Route::get('/bazar_list', ['uses'=>'Bazar@bazar_list']);
 
 
 Route::get('/bazar_details_list', ['uses'=>'Bazar@bazar_details_list']);

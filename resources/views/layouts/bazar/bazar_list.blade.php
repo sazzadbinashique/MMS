@@ -22,20 +22,22 @@
             <div class="table-responsive">
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
+                         @include('flash::message')
                         <tr>
                             <th>Id</th>
-                            <th> Name</th>
-                            <th>Expected Date</th>
+                            <th>Name</th>
                             <th>Month</th>
+                            <th>Expected Date</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($bazar_lists as $bazar_list)
                         <tr>
-                            <td>1</td>
-                            <td>ssssdddd</td>
-                            <td>12-1-2017</td>
-                            <td>January</td>
+                            <td>{{$bazar_list->id}}</td>
+                            <td>{{$bazar_list->user_name->name}}</td>
+                            <td>{{$bazar_list->month_name->Month}}</td>
+                            <td>{{$bazar_list->Expected_date}}</td>
                             <td class="text-center">
                                 <div class="btn-group text-center"> 
                                     <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -43,48 +45,14 @@
                                     </button>
                                     <ul class="dropdown-menu pull-right" role="menu">
                                         <li>
-                                            <a href="#">Edit</a>
+                                            {!! link_to('/bazar_add/'.$bazar_list->id, 'Edit') !!}
+                                            <!--<a href="#">Edit</a>-->
                                         </li> 
                                     </ul>
                                 </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>wwwwww</td>
-                            <td>12-1-2017</td>
-                            <td>January</td>
-                            <td class="text-center">
-                        	    <div class="btn-group text-center"> 
-                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        Active<span class="caret ml5"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right" role="menu">
-                                        <li>
-                                            <a href="#">Edit</a>
-                                        </li> 
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>dddqqqq</td>
-                            <td>12-1-2017</td>
-                            <td>January</td>
-                            <td class="text-center">
-                                <div class="btn-group text-center"> 
-                                    <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        Active<span class="caret ml5"></span>
-                                    </button>
-                                    <ul class="dropdown-menu pull-right" role="menu">
-                                        <li>
-                                            <a href="#">Edit</a>
-                                        </li> 
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
