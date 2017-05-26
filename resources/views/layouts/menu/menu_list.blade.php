@@ -22,6 +22,7 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
+                            @include('flash::message')
                             <tr>
                                 <th>Id</th>
                                 <th>Menu Name</th>

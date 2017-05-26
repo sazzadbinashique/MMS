@@ -39,8 +39,10 @@ Route::get('/bazar_add', ['uses'=>'Bazar@bazar_add']);
 Route::get('/bazar_list', ['uses'=>'Bazar@bazar_list']);
 
 
-Route::get('/bazar_details_list', ['uses'=>'Bazar@bazar_details_list']);
+Route::get('/bazar_details_add/{id}', ['uses'=>'Bazar@bazar_details_add']);
+Route::post('/bazar_details_add', ['uses'=>'Bazar@bazar_details_add']);
 Route::get('/bazar_details_add', ['uses'=>'Bazar@bazar_details_add']);
+Route::get('/bazar_details_list', ['uses'=>'Bazar@bazar_details_list']);
 
 
 /* ============== Extra Item  
@@ -71,5 +73,7 @@ Route::get('/menu_list', ['uses'=>'Menu@menu_list']);
 /* ============== Month 
 ========================================== */
 
-Route::get('/month_list', ['uses'=>'Month@month_list']);
+Route::get('/month_add/{id}', ['uses'=>'Month@month_add']);
+Route::post('/month_add', ['uses'=>'Month@month_add']);
 Route::get('/month_add', ['uses'=>'Month@month_add']);
+Route::get('/month_list', ['uses'=>'Month@month_list']);

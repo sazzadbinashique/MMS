@@ -5,84 +5,42 @@
 @section('content')
 
 <div class="row">
-                 <!--  page header -->
-                <div class="col-lg-12">
-                    <h1 class="page-header">Dasboard</h1>
-                </div>
-                 <!-- end  page header -->
+    <!-- Page Header -->
+    <div class="col-lg-12">
+        <h1 class="page-header">Dashboard</h1>
+    </div>
+    <!--End Page Header -->
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <!-- Form Elements -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>Month Add Form</h4>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                  <!--   Kitchen Sink -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3>Month List</h3> 
-                        </div>
             <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-striped table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Month Name</th>
-                                <th>Year</th>
-                                <th class="text-center">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>ssssdddd</td>
-                                <td>5</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>wwwwww</td>
-                                <td>5</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>dddqqqq</td>
-                                <td>5</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form">
+                            <div class="form-group">
+                                <label>Month Name:</label>
+                                <input class="form-control" type="text" name="department_name">
+                            </div>
+                            <div class="form-group">
+                                <label>Year</label>
+                                <input class="form-control" type="number" name="department_name">
+                            </div>    
+                            <div class="col-lg-6 col-lg-push-8">
+                                <button type="submit" class="btn btn-primary">Submit </button>
+                                <button type="reset" class="btn btn-success">Reset </button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+        </div>
+        <!-- End Form Elements -->
+    </div>
+</div>
 @stop
