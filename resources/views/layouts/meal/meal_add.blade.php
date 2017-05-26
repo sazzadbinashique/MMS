@@ -21,37 +21,44 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form role="form">
+                                    @include('flash::message')
+                                    {!! Form::model($meal, array('method'=>'POST', 'url' => '/meal_add', 'role'=>"form")) !!}
+                                    {{ Form::hidden('id') }}
                                        <div class="row">
                                             <div class="col-lg-6">
                                             <div class="form-group">
                                             <label>Name: </label>
-                                            <select class="form-control">
+<!--                                            <select class="form-control">
                                             <option selected="selected" value="">--- Add Name---</option>
                                                 <option>Sazzad Bin Ashique</option>
                                                 <option>Saif vai </option>
                                                 <option>Shovon vai </option>
                                                 <option>Emp_Name</option>
                                                 <option>Emp_Name</option>
-                                            </select>
+                                            </select>-->
+                                            {!! Form::select('user_id', $user_names, null, ['placeholder' => 'Add Your Name','id'=>'user_id','class'=>'form-control']) !!}
                                             </div>
 
                                             <div class="form-group">
                                                 <label> Date: </label>
-                                                <input class="form-control" type="date" name="department_name">
+                                                {!! Form::date("date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
+                                                <!--<input class="form-control" type="date" name="department_name">-->
                                             </div>
 
                                             <div class="form-group">
                                                 <label> Breakfast: </label>
-                                                <input class="form-control" type="text" name="department_name">
+                                                {!! Form::text("Braekfast", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Breakfast...', 'id'=>'Braekfast', 'value'=> old('Braekfast'),]) !!}
+                                                <!--<input class="form-control" type="text" name="department_name">-->
                                             </div>
                                             <div class="form-group">
                                                 <label> Launch: </label>
-                                                <input class="form-control" type="text" name="department_name">
+                                                {!! Form::text("Lanch", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Lanch...', 'id'=>'Lanch', 'value'=> old('Lanch'),]) !!}
+                                                <!--<input class="form-control" type="text" name="department_name">-->
                                             </div>
                                             <div class="form-group">
                                                 <label> Dinner: </label>
-                                                <input class="form-control" type="text" name="department_name">
+                                                {!! Form::text("Dinner", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Dinner...', 'id'=>'Dinner', 'value'=> old('Dinner'),]) !!}
+                                                <!--<input class="form-control" type="text" name="department_name">-->
                                             </div>
 
                                             <div class="col-lg-12 col-lg-push-8">
@@ -62,9 +69,7 @@
                                             </div>              
                                             
                                        </div> 
-                                        
-                                        
-                                    </form>
+                                    {!! Form::close() !!}
                                 </div>
 
                             </div>

@@ -11,9 +11,9 @@ class CreateMealTable extends Migration
         Schema::create('Meal', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('Braekfast');
-            $table->integer('Lanch');
-            $table->integer('Dinner');
+            $table->float('Braekfast');
+            $table->float('Lanch');
+            $table->float('Dinner');
             $table->dateTime('date');
             $table->timestamps();
         });

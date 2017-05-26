@@ -22,6 +22,7 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
+                            @include('flash::message')
                             <tr>
                                 <th>Id</th>
                                 <th>Name</th>
@@ -29,19 +30,18 @@
                                 <th>Launch</th>
                                 <th>Dinner</th>
                                 <th>Date</th>
-                                <th>avg.</th>
                                 <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($meal_lists as $meal_list)
                             <tr>
-                                <td>1</td>
-                                <td>ssssdddd</td>
-                                <th>.5</th>
-                                <th>1</th>
-                                <th>1</th>
-                                <th>12-1-2017</th>
-                                <th>avg.</th>
+                                <td>{{$meal_list->id}}</td>
+                                <td>{{$meal_list->user_name->name}}</td>
+                                <th>{{$meal_list->Braekfast}}</th>
+                                <th>{{$meal_list->Lanch}}</th>
+                                <th>{{$meal_list->Dinner}}</th>
+                                <th>{{$meal_list->date}}</th>
                                 <td class="text-center">
                                     <div class="btn-group text-center"> 
                                         <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -49,54 +49,14 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">Edit</a>
+                                                {!! link_to('/meal_add/'.$meal_list->id, 'Edit') !!}
+                                                <!--<a href="#">Edit</a>-->
                                             </li> 
                                         </ul>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>wwwwww</td>
-                                <th>.5</th>
-                                <th>1</th>
-                                <th>1</th>
-                                <th>12-1-2017</th>
-                                <th>avg.</th>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>dddqqqq</td>
-                                <th>.5</th>
-                                <th>1</th>
-                                <th>1</th>
-                                <th>12-1-2017</th>
-                                <th>avg.</th>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

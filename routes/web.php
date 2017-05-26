@@ -51,8 +51,10 @@ Route::get('/extra_item_list', ['uses'=> 'Extra@extra_item_list']);
 
 /* ============== Meal 
 ========================================== */
-Route::get('/meal_list', ['uses'=>'Meal@meal_list']);
+Route::get('/meal_add/{id}', ['uses'=>'Meal@meal_add']);
+Route::post('/meal_add', ['uses'=>'Meal@meal_add']);
 Route::get('/meal_add', ['uses'=>'Meal@meal_add']);
+Route::get('/meal_list', ['uses'=>'Meal@meal_list']);
 
 
 /* ============== Menu 
