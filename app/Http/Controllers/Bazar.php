@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\BazarModel;
 use App\MonthModel;
+use App\BazarDetailsModel;
 use App\User;
 use \Carbon\Carbon;
 use Validator;
@@ -84,6 +85,7 @@ class Bazar extends Controller
     }
 
     public function bazar_details_list(){
-    	return view('layouts.bazar.bazar_details_list');
+        $bazar_details = BazarDetailsModel::all();
+    	return view('layouts.bazar.bazar_details_list', ['bazar_details'=>$bazar_details]);
     }  
 }

@@ -32,12 +32,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($bazar_details as $bazar_detail)
                             <tr>
-                                <td>1</td>
-                                <td>ssssdddd</td>
-                                <td>ddddd</td>
-                                <td>500</td>
-                                <td>12-1-2017</td>
+                                <td>{{$bazar_detail->id}}</td>
+                                <td>{{$bazar_detail->user_name->name}}</td>
+                                <td>{{$bazar_detail->menu_name->menu_item}}</td>
+                                <td>{{$bazar_detail->Amount}}</td>
+                                <td>{{$bazar_detail->Date}}</td>
                                 <td class="text-center">
                                     <div class="btn-group text-center"> 
                                         <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -45,50 +46,14 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">Edit</a>
+                                                {!!link_to('/bazar_details_add/'.$bazar_detail->id, 'Edit')!!}
+                                                <!--<a href="#">Edit</a>-->
                                             </li> 
                                         </ul>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>wwwwww</td>
-                                <td>ddddd</td>
-                                <td>500</td>
-                                <td>12-1-2017</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>dddqqqq</td>
-                                <td>ddddd</td>
-                                <td>500</td>
-                                <td>12-1-2017</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

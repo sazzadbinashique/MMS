@@ -30,10 +30,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($month_lists as $month_list)
                             <tr>
-                                <td>1</td>
-                                <td>ssssdddd</td>
-                                <td>5</td>
+                                <td>{{$month_list->id}}</td>
+                                <td>{{$month_list->Month}}</td>
+                                <td>{{$month_list->Year}}</td>
                                 <td class="text-center">
                                     <div class="btn-group text-center"> 
                                         <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
@@ -41,46 +42,14 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                <a href="#">Edit</a>
+                                                {!! link_to('/month_add/'.$month_list->id, 'Edit') !!}
+                                                <!--<a href="#">Edit</a>-->
                                             </li> 
                                         </ul>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>wwwwww</td>
-                                <td>5</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>dddqqqq</td>
-                                <td>5</td>
-                                <td class="text-center">
-                                    <div class="btn-group text-center"> 
-                                        <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                            Active<span class="caret ml5"></span>
-                                        </button>
-                                        <ul class="dropdown-menu pull-right" role="menu">
-                                            <li>
-                                                <a href="#">Edit</a>
-                                            </li> 
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
