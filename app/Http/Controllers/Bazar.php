@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\BazarModel;
 use App\MonthModel;
 use App\BazarDetailsModel;
+use App\MenuModel;
 use App\User;
 use \Carbon\Carbon;
 use Validator;
@@ -24,6 +25,13 @@ class Bazar extends Controller
         'Month_id'=>'required',
         'Expected_date'=>'required',
         
+    ];
+    
+    private $rules_bazar_detail=[
+        'user_id' => 'required',
+        'Menu_id' => 'required',
+        'Amount' => 'required',
+        'Date' => 'required',
     ];
 
 
@@ -79,10 +87,52 @@ class Bazar extends Controller
         
     	return view('layouts.bazar.bazar_list', ['bazar_lists'=>$bazar_lists] );
     }
+    /* ===========================Bazar details 
+          ===================================================== */
 
-    public function bazar_details_add(){
-    	return view('layouts.bazar.bazar_details_add');
+    public function bazar_details_add(Request $request){
+        
+        $bazar_detail =!empty($request->id)?
+        BazarDetailsModel::where(['id'=>$request->id])->first()->toArray():
+            new BazarDetailsModel();
+        
+        if($request->isMethod('post')){
+             if($this->save_bazar_detail($request, $bazar_detail)){    
+                Flash::success('Succesfully create a new Bazar');
+                return redirect()->to('/bazar_details_list');
+            }
+        }
+
+
+    	$user_names = User::pluck('name', 'id');
+    	
+        $menu_names = \App\MenuModel::pluck('Menu_item', 'id');
+        
+    	return view('layouts.bazar.bazar_details_add', compact('bazar_detail', 'user_names', 'menu_names'));
     }
+    
+    public function save_bazar_detail(Request $request, $bazar_detail_model){
+        $validator =Validator::make($request->all(), $this->rules_bazar_detail);//dd($validator);
+        if($validator->fails()){
+             Flash::error(Utilities::errors($validator));           //dd('here');
+            return false;           // dd('Flash::error');
+        }  else {
+            $input = $request->all(); 
+            // dd($input);
+            if (empty($request->id)) {
+                $request->offsetSet('created_at', Carbon::now());
+                $bazar_add = $bazar_detail_model->create($request->instance()->all());
+            } else {
+                $bazar= BazarDetailsModel::find($request->id);
+                $request->offsetSet('updated_at', Carbon::now());
+                $bazar->update($request->all());
+                Flash::success('Successfully updated a Bazars Detail ');
+            }
+            return true;
+        }
+    } 
+    
+    
 
     public function bazar_details_list(){
         $bazar_details = BazarDetailsModel::all();

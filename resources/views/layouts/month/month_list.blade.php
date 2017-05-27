@@ -22,6 +22,7 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
+                            @include('flash::message')
                             <tr>
                                 <th>Id</th>
                                 <th>Month Name</th>
@@ -42,7 +43,7 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                {!! link_to('/month_add/'.$month_list->id, 'Edit') !!}
+                                                {!! link_to('/month_add/'.$month_list->id, 'Edit', ['class'=>"fa fa-edit"]) !!}
                                                 <!--<a href="#">Edit</a>-->
                                             </li> 
                                         </ul>

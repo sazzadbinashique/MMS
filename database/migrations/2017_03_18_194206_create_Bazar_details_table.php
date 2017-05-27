@@ -18,7 +18,7 @@ class CreateBazarDetailsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('Menu_id')->unsigned();
             $table->integer('Amount');
-            $table->dateTime('Date');
+            $table->date('Date');
             $table->timestamps();
         });
     }

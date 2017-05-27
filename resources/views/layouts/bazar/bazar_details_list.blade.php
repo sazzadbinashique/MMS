@@ -5,23 +5,24 @@
 @section('content')
 
 <div class="row">
-                 <!--  page header -->
-                <div class="col-lg-12">
-                    <h1 class="page-header">Dasboard</h1>
-                </div>
-                 <!-- end  page header -->
+    <!--  page header -->
+    <div class="col-lg-12">
+        <h1 class="page-header">Dasboard</h1>
+    </div>
+    <!-- end  page header -->
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <!--   Kitchen Sink -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3>Bazar Details List</h3>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                  <!--   Kitchen Sink -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3>Bazar Details List</h3> 
-                        </div>
             <div class="panel-body">
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover">
                         <thead>
+                            @include('flash::message')
                             <tr>
                                 <th>Id</th>
                                 <th> Name</th>
@@ -46,7 +47,7 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                                {!!link_to('/bazar_details_add/'.$bazar_detail->id, 'Edit')!!}
+                                                {!!link_to('/bazar_details_add/'.$bazar_detail->id, 'Edit', ['class'=>"fa fa-edit"])!!}
                                                 <!--<a href="#">Edit</a>-->
                                             </li> 
                                         </ul>

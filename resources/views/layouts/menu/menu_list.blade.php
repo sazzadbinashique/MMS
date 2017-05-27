@@ -41,7 +41,7 @@
                                         </button>
                                         <ul class="dropdown-menu pull-right" role="menu">
                                             <li>
-                                            {!! link_to('/menu_add/'.$menu_list->id, 'Edit') !!}
+                                            {!! link_to('/menu_add/'.$menu_list->id, 'Edit', ['class'=>"fa fa-edit"]) !!}
                                                 <!-- <a href="#">Edit</a> -->
                                             </li> 
                                         </ul>

@@ -45,7 +45,8 @@
                             </button>
                             <ul class="dropdown-menu pull-right" role="menu">
                                 <li>
-                                {!! link_to('/collection_add/'.$collection_list->id, 'Edit') !!}
+                                {!! link_to('/collection_add/'.$collection_list->id, 'Edit', ['class'=>"fa fa-edit"] ) !!}
+                                <a href="#" id="4" class="fa fa-trash">Delete</a>
                                     <!-- <a href="#">Edit</a> -->
                                 </li> 
                             </ul>
