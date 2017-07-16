@@ -66,8 +66,6 @@ class Addition extends Controller
         }
     }
     
-       
-
   public function additional_list(){
        $additional_lists = AdditionalModel::all();
         
