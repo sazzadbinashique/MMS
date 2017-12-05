@@ -11,8 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.master.layout');
+//Route::get('/', function () {
+//    return view('layouts.master.layout');
+//});
+
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index');
+
+
+Route::get('/', function() {
+    return view('auth.login');
+});
+Route::get('/auth/register', function() {
+    return view('auth.register');
 });
 
 
@@ -77,3 +90,4 @@ Route::get('/month_add/{id}', ['uses'=>'Month@month_add']);
 Route::post('/month_add', ['uses'=>'Month@month_add']);
 Route::get('/month_add', ['uses'=>'Month@month_add']);
 Route::get('/month_list', ['uses'=>'Month@month_list']);
+
