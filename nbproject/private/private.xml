@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/var/www/html/MMS/resources/views/layouts/bazar/bazar_list.blade.php</file>
-            <file>file:/var/www/html/MMS/resources/views/layouts/collection/collection_list.blade.php</file>
-            <file>file:/var/www/html/MMS/resources/views/layouts/menu/menu_list.blade.php</file>
-            <file>file:/var/www/html/MMS/app/MonthModel.php</file>
-            <file>file:/var/www/html/MMS/app/Http/Controllers/Bazar.php</file>
-            <file>file:/var/www/html/MMS/resources/views/layouts/bazar/bazar_details_list.blade.php</file>
-            <file>file:/var/www/html/MMS/resources/views/layouts/extra/extra_item_list.blade.php</file>
-            <file>file:/var/www/html/MMS/resources/views/layouts/meal/meal_list.blade.php</file>
-            <file>file:/var/www/html/MMS/app/Http/Controllers/Month.php</file>
-            <file>file:/var/www/html/MMS/resources/views/layouts/month/month_list.blade.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
