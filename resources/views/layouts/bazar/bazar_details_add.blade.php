@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label> Date: </label>
-                                        {!! Form::date("Date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'Date', 'value'=> old('Date'),]) !!}
+                                        {!! Form::text("Date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'Date', 'value'=> old('Date'),]) !!}
                                     </div> 
                                     <div class="form-group">
                                         <label> Amount: </label>

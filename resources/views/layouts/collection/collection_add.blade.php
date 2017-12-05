@@ -33,7 +33,7 @@
                             </div> 
                              <div class="form-group">
                                 <label for="date"> Collection Date: </label>
-                                {!! Form::date("date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
+                                {!! Form::text("date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
                             </div> 
                                 
                             <div class="col-lg-6 col-lg-push-8">

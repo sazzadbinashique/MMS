@@ -44,7 +44,7 @@ class Menu extends Controller
         $validator =Validator::make($request->all(), $this->rules_menu);//dd($validator);
         if($validator->fails()){
              Flash::error(Utilities::errors($validator));           //dd('here');
-            return false;            dd('Flash::error');
+            return false;           // dd('Flash::error');
         }  else {
             $input = $request->all(); 
             // dd($input);

@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label> Expected Date: </label>
-                                        {!! Form::date("Expected_date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'Expected_date', 'value'=> old('Expected_date'),]) !!}
+                                        {!! Form::text("Expected_date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'Expected_date', 'value'=> old('Expected_date'),]) !!}
                                     </div> 
                                     <div class="col-lg-12 col-lg-push-8">
                                         <button type="submit" class="btn btn-primary">Submit </button>

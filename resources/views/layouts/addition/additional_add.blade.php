@@ -40,7 +40,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label> Enter Date: </label>
-                                        {!! Form::date("date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
+                                        {!! Form::text("date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
                                         <!--<input class="form-control" type="date" name="department_name">-->
                                     </div> 
                                     <div class="form-group">
