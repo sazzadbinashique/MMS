@@ -40,7 +40,7 @@
                 <!-- Welcome -->
                 <div class="col-lg-12">
                     <div class="alert alert-info">
-                        <i class="fa fa-folder-open"></i><b>&nbsp; ami amar jonno, tobe jodi nite cao se nira... &nbsp;
+                        <i class="fa fa-folder-open"></i><b>&nbsp;Sazzad Bin Ashique . Mess Management Software &nbsp;
                     </div>
                 </div>
                 <!--end  Welcome -->

@@ -11,22 +11,28 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('layouts.master.layout');
-//});
+Route::get('/', function () {
+    return view('layouts.app');
+});
 
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index');
+//Route::get('/master', 'HomeController@index');
 
 
-Route::get('/', function() {
+Route::get('/auth/login', function() {
     return view('auth.login');
 });
 Route::get('/auth/register', function() {
     return view('auth.register');
 });
+
+
+Route::get('/dashboard', function () {
+        return view('layouts.master.layout');
+    });
+
 
 
 /* ============== Collection 

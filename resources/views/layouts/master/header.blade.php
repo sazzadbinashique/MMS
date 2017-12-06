@@ -8,7 +8,7 @@ navbar top -->
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('/')}}">
+                <a class="navbar-brand" href="{{url('/dashboard')}}">
                     <img src="{{asset('assets/img/logo.png')}}" alt="" />
                 </a>
             </div>
@@ -23,12 +23,21 @@ navbar top -->
                     </a>
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="hris_profile_settings.html"><i class="fa fa-user fa-fw"></i>User Profile</a>
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        <li>
+                            <a href="{{ url('/logout') }}"
+                               onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                Logout
+                            </a>
+
+                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                         </li>
                     </ul>
                     <!-- end dropdown-user -->
