@@ -130,6 +130,18 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <a href="#"><i class="fa fa-building-o fa-fw"></i> User<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{url('/user_list')}}"><i class="fa fa-list"></i> User list</a>
+                    </li>
+                    <li>
+                        <a href="{{url('/user_add')}}"><i class="fa fa-plus"></i>  User Add </a>
+
+                    </li>
+                </ul>
+            </li>
         </ul>
         <!-- end side-menu -->
     </div>
