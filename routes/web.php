@@ -98,14 +98,13 @@ Route::get('/month_add', ['uses'=>'Month@month_add']);
 Route::get('/month_list', ['uses'=>'Month@month_list']);
 
 
-Route::get('/user_add', function() {
-    return view('layouts.user.user_add');
+//Route::get('/user_add', function() {
+//    return view('layouts.user.user_add');
+//    
     
-    
+//});
+
+Route::get('/user_add/{id}', ['uses'=>'UserController@user_add']);
+Route::post('/user_add', ['uses'=>'UserController@user_add']);
+Route::get('/user_add', ['uses'=>'UserController@user_add']);
 Route::get('/user_list', ['uses'=>'UserController@user_list']);
-
-
-
-
-
-});

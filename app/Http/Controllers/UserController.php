@@ -18,13 +18,21 @@ use Session;
 class UserController extends Controller
 {
     
+    public function user_add(){
+        return view('layouts.user.user_add');
+    }
     
     
-       public function user_list(){
+    
+   
+
+    
+
+    public function user_list(){
         
         $user_lists = User::all();
         
-        dd($user_lists);
+//        dd($user_lists);
         
     	return view('layouts.user.user_list',['user_lists'=>$user_lists]);
     }

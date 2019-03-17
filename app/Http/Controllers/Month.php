@@ -69,7 +69,7 @@ class Month extends Controller
         
         $month_lists = MonthModel::all();
         
-        dd($month_lists);
+//        dd($month_lists);
         
     	return view('layouts.month.month_list',['month_lists'=>$month_lists]);
     }
