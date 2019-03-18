@@ -1,6 +1,6 @@
 @extends('layouts.master.layout')
 
-@section('title','Etra Item')
+@section('title','Extra Item')
 
 @section('content')
 <div class="container">
@@ -74,6 +74,40 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<div>
+<table class="table table-striped table-bordered table-hover">
+                   <thead>
+                       @include('flash::message')
+                       <tr>
+                           <th>ID</th>
+                           <th>Name</th>
+                           <th>Individual Total Meal</th>
+                           <th>Total Meal</th>
+                           <th>Total Bazar </th>
+                           <th>Meal Rate </th>
+                           <th>Individual Meal Cost</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                        @foreach($user_lists as $user_list)
+
+                       <tr>
+                           <td>{{$user_list->id}}</td>
+                           <td>{{$user_list->name}}</td>
+                           <td>{{$individual_total_meal}}</td>
+                           <td>{{$total_meal}}</td>
+                           <td>{{$total_bazar}}</td>
+                           <td>{{$meal_rate}}</td>
+                           <td>{{$khorochs}}</td>
+
+                       </tr>
+                       
+                        @endforeach
+                   </tbody>
+               </table>
 </div>
 
 
