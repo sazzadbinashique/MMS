@@ -15,7 +15,7 @@ class CreateAdditionalsTable extends Migration
     {
         Schema::create('additionals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('extra_item_id')->unsigned()->index();
+            $table->integer('extra_items_id')->unsigned()->index();
             $table->string('amount');
             $table->date('date');
             $table->timestamps();

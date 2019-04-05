@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\BazarModel;
-use App\MonthModel;
-use App\BazarDetailsModel;
-use App\MenuModel;
+use App\Bazar;
+use App\Month;
+use App\BazarDetails;
+use App\BazarMenu;
 use App\User;
 use \Carbon\Carbon;
 use Validator;
@@ -40,8 +40,8 @@ class Bazar extends Controller
     public function bazar_add(Request $request){
 
     	  $bazar = !empty($request->id)?
-              BazarModel::where(['id'=>$request->id])->first()->toArray():
-            new BazarModel();
+              Bazar::where(['id'=>$request->id])->first()->toArray():
+            new Bazar();
        
         
         if($request->isMethod('post')){
@@ -54,7 +54,7 @@ class Bazar extends Controller
 
     	$user_names = User::pluck('name', 'id');
     	
-        $month_names = MonthModel::pluck('Month', 'id');
+        $month_names = Month::pluck('Month', 'id');
     	
    		return view('layouts.bazar.bazar_add', compact('bazar','user_names','month_names'));
    	}
@@ -72,7 +72,7 @@ class Bazar extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $bazar_add = $bazar_model->create($request->instance()->all());
             } else {
-                $bazar= BazarModel::find($request->id);
+                $bazar= Bazar::find($request->id);
                 $request->offsetSet('updated_at', Carbon::now());
                 $bazar->update($request->all());
                 Flash::success('Successfully updated a Bazars ');
@@ -83,7 +83,7 @@ class Bazar extends Controller
 
     public function bazar_list(){
         
-        $bazar_lists = BazarModel::all();
+        $bazar_lists = Bazar::all();
         
     	return view('layouts.bazar.bazar_list', ['bazar_lists'=>$bazar_lists] );
     }
@@ -93,8 +93,8 @@ class Bazar extends Controller
     public function bazar_details_add(Request $request){
         
         $bazar_detail =!empty($request->id)?
-        BazarDetailsModel::where(['id'=>$request->id])->first()->toArray():
-            new BazarDetailsModel();
+        BazarDetail::where(['id'=>$request->id])->first()->toArray():
+            new BazarDetail();
         
         if($request->isMethod('post')){
              if($this->save_bazar_detail($request, $bazar_detail)){    
@@ -106,7 +106,7 @@ class Bazar extends Controller
 
     	$user_names = User::pluck('name', 'id');
     	
-        $menu_names = \App\MenuModel::pluck('Menu_item', 'id');
+        $menu_names = BazarMenu::pluck('Menu_item', 'id');
         
     	return view('layouts.bazar.bazar_details_add', compact('bazar_detail', 'user_names', 'menu_names'));
     }
@@ -123,7 +123,7 @@ class Bazar extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $bazar_add = $bazar_detail_model->create($request->instance()->all());
             } else {
-                $bazar= BazarDetailsModel::find($request->id);
+                $bazar= BazarDetail::find($request->id);
                 $request->offsetSet('updated_at', Carbon::now());
                 $bazar->update($request->all());
                 Flash::success('Successfully updated a Bazars Detail ');
@@ -135,7 +135,7 @@ class Bazar extends Controller
     
 
     public function bazar_details_list(){
-        $bazar_details = BazarDetailsModel::all();
+        $bazar_details = BazarDetail::all();
     	return view('layouts.bazar.bazar_details_list', ['bazar_details'=>$bazar_details]);
     }  
 }

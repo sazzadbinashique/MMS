@@ -37,10 +37,10 @@ Route::get('/dashboard', function () {
 
 /* ============== Collection 
 ========================================== */
-Route::get('/collection_add/{id}', ['uses' => 'Collection@collection_add']);
-Route::get('/collection_add', ['uses' => 'Collection@collection_add']);
-Route::post('/collection_add', ['uses' => 'Collection@collection_add']);
-Route::get('/collection_list', ['uses' => 'Collection@collection_list']);
+Route::get('/collection_add/{id}', ['uses' => 'CollectionController@collection_add']);
+Route::get('/collection_add', ['uses' => 'CollectionController@collection_add']);
+Route::post('/collection_add', ['uses' => 'CollectionController@collection_add']);
+Route::get('/collection_list', ['uses' => 'CollectionController@collection_list']);
 
 /* ============== Additional 
 ========================================== */

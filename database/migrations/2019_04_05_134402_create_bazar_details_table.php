@@ -16,7 +16,7 @@ class CreateBazarDetailsTable extends Migration
         Schema::create('bazar_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
-            $table->integer('bazar_menu_id')->unsigned()->index);
+            $table->integer('bazar_menu_id')->unsigned()->index();
             $table->string('amount');
             $table->date('date');   
             $table->timestamps();

@@ -11,7 +11,7 @@
                         <img src="{{asset('assets/img/user.jpg')}}" alt="">
                     </div>
                     <div class="user-info">
-                        {{ Auth::user()->name }}   
+                        <!-- {{ Auth::user()->name }}    -->
                     </div>
                 </div>
                 <!--end user image section-->

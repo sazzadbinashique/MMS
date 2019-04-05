@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\MonthModel;
+use App\Month;
 use \Carbon\Carbon;
 use Validator;
 use View;
@@ -28,8 +28,8 @@ class Month extends Controller
     
     public function month_add(Request $request){
         $month = !empty($request->id)?
-           MonthModel::where(['id'=>$request->id])->first()->toArray():
-            new MonthModel();
+           Month::where(['id'=>$request->id])->first()->toArray():
+            new Month();
             //dd($month);
 
              if($request->isMethod('post')){
@@ -54,7 +54,7 @@ class Month extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $month_add = $month_model->create($request->instance()->all());
             } else {
-                $month = MonthModel::find($request->id);
+                $month = Month::find($request->id);
                 $request->offsetSet('updated_at', Carbon::now());
                 $month->update($request->all());
                 Flash::success('Successfully updated a Month');
@@ -67,7 +67,7 @@ class Month extends Controller
     
     public function month_list(){
         
-        $month_lists = MonthModel::all();
+        $month_lists = Month::all();
         
 //        dd($month_lists);
         

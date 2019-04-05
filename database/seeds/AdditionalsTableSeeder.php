@@ -15,9 +15,8 @@ class AdditionalsTableSeeder extends Seeder
     {
         $current = Carbon::now();
         $additionaldata = [
-        	['id'=> 1, 'extra_item_id'=>1, 'date'=> Carbon::now(), 'extra_amount'=>32],
-        	['id'=> 2, 'extra_item_id'=>1, 'date'=> Carbon::now(), 'extra_amount'=>32],
-        	['id'=> 3, 'extra_item_id'=>1, 'date'=> Carbon::now(), 'extra_amount'=>32],
+        	['id'=> 1, 'extra_items_id'=>1, 'date'=> Carbon::now(), 'amount'=>32],
+        	['id'=> 2, 'extra_items_id'=>1, 'date'=> Carbon::now(), 'amount'=>32],
         ];
 
         DB:: table('additionals')->insert($additionaldata);

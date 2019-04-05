@@ -7,9 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Additional extends Model
 {
     
-    protected $fillable = ['extra_item_id','date', 'extra_amount'];
+    protected $fillable = ['extra_items_id','date', 'amount'];
     
-     public function extra_item_name(){
-        return $this->belongsTo('App\ExtraItemModel');
+
+    public function extra_items_name(){
+
+    	return $this->belongsTo('App\ExtraItem');
     }
 }

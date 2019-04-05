@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\User;
-use App\MealModel;
-use App\BazarDetailsModel;
+use App\Meal;
+use App\BazarDetail;
 use \Carbon\Carbon;
 use Validator;
 use View;
@@ -25,10 +25,10 @@ class UserController extends Controller
         $users = User::where('id', 1)->get();
         // $users = User::all();
 
-        $total_bazar= DB:: table('Bazar_details')->sum('Amount');
-        $total_meal= ceil(DB::table('Meal')->sum(DB::raw('Braekfast + Lanch + Dinner')));
+        $total_bazar= DB:: table('bazar_details')->sum('amount');
+        $total_meal= ceil(DB::table('meals')->sum(DB::raw('braekfast + lanch + dinner')));
         $meal_rate= round( $total_bazar/$total_meal, 2);
-        $person_total_meal= DB::table('Meal')->where('user_id', 1)->sum(DB::raw('Braekfast + Lanch + Dinner'));
+        $person_total_meal= DB::table('meals')->where('user_id', 1)->sum(DB::raw('braekfast + lanch + dinner'));
 
         $total_cost= $person_total_meal * $meal_rate;
         

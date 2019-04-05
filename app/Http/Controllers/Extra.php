@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\ExtraItemModel;
+use App\ExtraItem;
 use \Carbon\Carbon;
 use Validator;
 use View;
@@ -26,8 +26,8 @@ class Extra extends Controller
     public function extra_item_add(Request $request){
         
         $extra = !empty($request->id)?
-        	ExtraItemModel::where(['id'=>$request->id])->first()->toArray():
-            new ExtraItemModel();
+        	ExtraItem::where(['id'=>$request->id])->first()->toArray():
+            new ExtraItem();
             //dd($extra);
 
              if($request->isMethod('post')){
@@ -55,7 +55,7 @@ class Extra extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $extra_item_add = $extra_model->create($request->instance()->all());
             } else {
-                $extra = ExtraItemModel::find($request->id);
+                $extra = ExtraItem::find($request->id);
                 $request->offsetSet('updated_at', Carbon::now());
                 $extra->update($request->all());
                 Flash::success('Successfully updated a Extra ');
@@ -66,7 +66,7 @@ class Extra extends Controller
     
 
     public function extra_item_list(){
-        $extra_lists = ExtraItemModel::all();
+        $extra_lists = ExtraItem::all();
         
         //dd($extra_list);
         

@@ -34,7 +34,7 @@
             @foreach($collection_lists as $collection_list)
                 <tr>
                     <td>{{$collection_list->id}}</td>
-                    <td>{{$collection_list->user_name->name}}</td> 
+                    <td>{{$collection_list->user->name}}</td> 
                     <td>{{$collection_list->amount}}</td>
                     <td>{{$collection_list->date}}</td>
                     <!-- <td>500</td> -->

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\MealModel;
+use App\Meal;
 use App\User;
 use \Carbon\Carbon;
 use Validator;
@@ -30,8 +30,8 @@ class Meal extends Controller
     public function meal_add(Request $request){
 
     	  $meal = !empty($request->id)?
-                MealModel::where(['id'=>$request->id])->first()->toArray():
-            new MealModel();
+                Meal::where(['id'=>$request->id])->first()->toArray():
+            new Meal();
         
        // dd($additional);
         
@@ -61,7 +61,7 @@ class Meal extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $meal_add = $meal_model->create($request->instance()->all());
             } else {
-                $meal = MealModel::find($request->id);
+                $meal = Meal::find($request->id);
                 $request->offsetSet('updated_at', Carbon::now());
                 $meal->update($request->all());
                 Flash::success('Successfully updated a meal ');
@@ -72,7 +72,7 @@ class Meal extends Controller
 
     public function meal_list(){
         
-        $meal_lists = MealModel::all();
+        $meal_lists = Meal::all();
         
     	return view('layouts.meal.meal_list', ['meal_lists'=>$meal_lists] );
     }  

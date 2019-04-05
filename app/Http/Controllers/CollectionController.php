@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\CollectionModel;
+use App\Collection;
 use App\User;
 use \Carbon\Carbon;
 use Validator;
@@ -17,7 +17,7 @@ use Cache;
 use Session;
 
 
-class Collection extends Controller
+class CollectionController extends Controller
 {
 
 	private $rules_collection = [
@@ -30,8 +30,8 @@ class Collection extends Controller
     public function collection_add(Request $request){
 
     	  $collection = !empty($request->id)?
-        	CollectionModel::where(['id'=>$request->id])->first()->toArray():
-            new CollectionModel();
+        	Collection::where(['id'=>$request->id])->first()->toArray():
+            new Collection();
         
         // dd($collection);
         
@@ -65,7 +65,7 @@ class Collection extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $collection_add = $collection_model->create($request->instance()->all());
             } else {
-                $collection = CollectionModel::find($request->id);
+                $collection = Collection::find($request->id);
                 $request->offsetSet('updated_at', Carbon::now());
                 $collection->update($request->all());
                 Flash::success('Successfully updated a collction ');
@@ -79,7 +79,7 @@ class Collection extends Controller
    	public function collection_list(){
 
       // $collection_lists = DB::table('Collection')->get();
-      $collection_lists = CollectionModel::all();
+      $collection_lists = Collection::all();
       // dd($collection_lists);
       $member_names = User::pluck('name', 'id');
 

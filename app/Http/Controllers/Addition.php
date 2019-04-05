@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\AdditionalModel;
-use App\ExtraItemModel;
+use App\Additional;
+use App\ExtraItem;
 use \Carbon\Carbon;
 use Validator;
 use View;
@@ -26,8 +26,8 @@ class Addition extends Controller
     public function additional_add(Request $request){
 
     	  $additional = !empty($request->id)?
-                AdditionalModel::where(['id'=>$request->id])->first()->toArray():
-            new AdditionalModel();
+                Additional::where(['id'=>$request->id])->first()->toArray():
+            new Additional();
         
        // dd($additional);
         
@@ -39,7 +39,7 @@ class Addition extends Controller
         }
 
 
-    	$extra_item_names = ExtraItemModel::pluck('extra_item', 'id');
+    	$extra_item_names = ExtraItem::pluck('extra_item', 'id');
     	
    		return view('layouts.addition.additional_add', compact('additional','extra_item_names'));
    	}
@@ -57,7 +57,7 @@ class Addition extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $additional_add = $additional_model->create($request->instance()->all());
             } else {
-                $additional = AdditionalModel::find($request->id);
+                $additional = Additional::find($request->id);
                 $request->offsetSet('updated_at', Carbon::now());
                 $additional->update($request->all());
                 Flash::success('Successfully updated a Additional ');
@@ -67,7 +67,7 @@ class Addition extends Controller
     }
     
   public function additional_list(){
-       $additional_lists = AdditionalModel::all();
+       $additional_lists = Additional::all();
         
     	return view('layouts.addition.additional_list', ['additional_lists'=>$additional_lists]);
   }

@@ -10,8 +10,9 @@ class Collection extends Model
     protected $fillable = ['user_id','amount', 'date','created_at','updated_at'];
 
 
-    public function user_name(){
+      public function user(){
         return $this->belongsTo('App\User');
     }
+
   
 }

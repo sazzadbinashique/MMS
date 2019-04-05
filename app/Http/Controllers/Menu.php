@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\MenuModel;
+use App\BazarMenu;
 use \Carbon\Carbon;
 use Validator;
 use View;
@@ -27,8 +27,8 @@ class Menu extends Controller
     public function menu_add(Request $request){
 
     	$menu = !empty($request->id)?
-        	MenuModel::where(['id'=>$request->id])->first()->toArray():
-            new MenuModel();
+        	BazarMenu::where(['id'=>$request->id])->first()->toArray():
+            new BazarMenu();
             //dd($menu);
 
              if($request->isMethod('post')){
@@ -52,7 +52,7 @@ class Menu extends Controller
                 $request->offsetSet('created_at', Carbon::now());
                 $menu_add = $menu_model->create($request->instance()->all());
             } else {
-                $menu = MenuModel::find($request->id);
+                $menu = BazarMenu::find($request->id);
                 $request->offsetSet('updated_at', Carbon::now());
                 $menu->update($request->all());
                 Flash::success('Successfully updated a menu ');
@@ -63,7 +63,7 @@ class Menu extends Controller
 
 
     public function menu_list(){
-        $menu_lists = MenuModel::all();
+        $menu_lists = BazarMenu::all();
 
 
     	return view('layouts.menu.menu_list',['menu_lists'=>$menu_lists]);

@@ -36,9 +36,9 @@
                 @foreach($additional_lists as $additional_list)
                 <tr>
                     <td>{{$additional_list->id}}</td>
-                    <td>{{$additional_list->extra_item_name->extra_item}}</td>
+                    <td>{{$additional_list->extra_items_id}}</td>
                     <td>{{$additional_list->date}}</td>
-                    <td>{{$additional_list->extra_amount}}</td>
+                    <td>{{$additional_list->amount}}</td>
                     <td class="text-center">
                         <div class="btn-group text-center"> 
                             <button type="button" class="btn btn-success br2 btn-xs fs12 dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
