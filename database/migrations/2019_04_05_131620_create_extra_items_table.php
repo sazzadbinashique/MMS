@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TableBazarDetails extends Migration
+class CreateExtraItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class TableBazarDetails extends Migration
      */
     public function up()
     {
-        Schema::table('Bazar_details', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('Menu_id')->references('id')->on('Menu');
+        Schema::create('extra_items', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('extra_item');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +27,6 @@ class TableBazarDetails extends Migration
      */
     public function down()
     {
-        Schema::table('Bazar_details', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('extra_items');
     }
 }

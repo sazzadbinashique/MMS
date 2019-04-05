@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TableBazar extends Migration
+class CreateCollectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class TableBazar extends Migration
      */
     public function up()
     {
-        Schema::table('Bazar', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('Month_id')->references('id')->on('Month');
+        Schema::create('collections', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->string('amount');
+            $table->date('date');
+            $table->timestamps();
         });
     }
 
@@ -26,8 +29,6 @@ class TableBazar extends Migration
      */
     public function down()
     {
-        Schema::table('Bazar', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('collections');
     }
 }

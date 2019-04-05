@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class Collection extends Seeder
+class CollectoinsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,6 +18,7 @@ class Collection extends Seeder
             
         ];
         
-        DB::table('Collection')->insert($collectiondata);
+        DB::table('collections')->insert($collectiondata);
+
     }
 }

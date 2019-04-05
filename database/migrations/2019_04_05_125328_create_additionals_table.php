@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TableCollection extends Migration
+class CreateAdditionalsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class TableCollection extends Migration
      */
     public function up()
     {
-        Schema::table('Collection', function (Blueprint $table) {
-            $table->foreign('user_id')->references('id')->on('users');
+        Schema::create('additionals', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('extra_item_id')->unsigned()->index();
+            $table->string('amount');
+            $table->date('date');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class TableCollection extends Migration
      */
     public function down()
     {
-        Schema::table('Collection', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('additionals');
     }
 }

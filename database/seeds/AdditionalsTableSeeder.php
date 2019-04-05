@@ -3,7 +3,8 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 
-class Additional extends Seeder
+
+class AdditionalsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,6 +20,7 @@ class Additional extends Seeder
         	['id'=> 3, 'extra_item_id'=>1, 'date'=> Carbon::now(), 'extra_amount'=>32],
         ];
 
-        DB:: table('Additional')->insert($additionaldata);
+        DB:: table('additionals')->insert($additionaldata);
+
     }
 }

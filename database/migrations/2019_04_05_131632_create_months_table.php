@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TableAdditional extends Migration
+class CreateMonthsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class TableAdditional extends Migration
      */
     public function up()
     {
-        Schema::table('Additional', function (Blueprint $table) {
-            $table->foreign('Extra_item_id')->references('id')->on('Extra_item');
+        Schema::create('months', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('month');
+            $table->integer('year');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +28,6 @@ class TableAdditional extends Migration
      */
     public function down()
     {
-        Schema::table('Additional', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('months');
     }
 }

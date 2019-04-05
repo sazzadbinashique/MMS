@@ -4,19 +4,29 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMenuTable extends Migration
+class CreateBazarMenusTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
-        Schema::create('Menu', function (Blueprint $table) {
+        Schema::create('bazar_menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('menu_item');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::dropIfExists('Menu');
+        Schema::dropIfExists('bazar_menus');
     }
 }

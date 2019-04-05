@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBazarTable extends Migration
+class CreateBazarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateBazarTable extends Migration
      */
     public function up()
     {
-        Schema::create('Bazar', function (Blueprint $table) {
+        Schema::create('bazars', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('Month_id')->unsigned();
-            $table->dateTime('Expected_date');
+            $table->integer('user_id')->unsigned()->index();
+            $table->integer('month_id')->unsigned()->index();
+            $table->date('expected_date');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateBazarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Bazar');
+        Schema::dropIfExists('bazars');
     }
 }

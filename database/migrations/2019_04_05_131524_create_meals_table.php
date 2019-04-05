@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBazarDetailsTable extends Migration
+class CreateMealsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateBazarDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('Bazar_details', function (Blueprint $table) {
+        Schema::create('meals', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('Menu_id')->unsigned();
-            $table->integer('Amount');
-            $table->date('Date');
+            $table->float('braekfast');
+            $table->float('lanch');
+            $table->float('dinner');
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateBazarDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Bazar_details');
+        Schema::dropIfExists('meals');
     }
 }
