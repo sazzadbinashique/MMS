@@ -22,57 +22,32 @@ class UserController extends Controller
     
     public function user_add(){
         
-        $user_lists = User::all();
-//        $user_lists = User::where('id', 3 )->first();
-//        $user_lists = User::findOrFail(3);
+        $users = User::where('id', 1)->get();
+        // $users = User::all();
 
-        
-//        dd($user_lists);
-        
         $total_bazar= DB:: table('Bazar_details')->sum('Amount');
-        
-        $total_meal1= DB:: table('Meal')->sum('Braekfast');
-        $total_meal2= DB:: table('Meal')->sum('Lanch');
-        $total_meal3= DB:: table('Meal')->sum('Dinner');
-        
-        $total_meal= ceil($total_meal1 + $total_meal2 + $total_meal3);
-        
+        $total_meal= ceil(DB::table('Meal')->sum(DB::raw('Braekfast + Lanch + Dinner')));
         $meal_rate= round( $total_bazar/$total_meal, 2);
-        
-        
-        
-        $individual_total_meal= MealModel::where('id', 3)
-                ->value(DB::raw("SUM(Braekfast + Lanch + Dinner)"));
-        
-        $khorochs= $individual_total_meal * $meal_rate;
-        
-//        echo $khoroch;
-        
-//        dd($individual_total_meal);
-        
-//        dd($meal_rate);
-        
-//        dd($total_meal);
-        
-        
-//        dd($users);
-        
-        
-        return view('layouts.user.user_add', compact('user_lists','total_bazar','total_meal1','total_meal2','total_meal3','total_meal','meal_rate','individual_total_meal', 'khorochs'));
-    }
-    
-    
-    
-   
+        $person_total_meal= DB::table('Meal')->where('user_id', 1)->sum(DB::raw('Braekfast + Lanch + Dinner'));
 
+        $total_cost= $person_total_meal * $meal_rate;
+        
+        return view('layouts.user.user_add', compact('users','total_bazar','total_meal','meal_rate','person_total_meal', 'total_cost'));
+    }
     
 
     public function user_list(){
         
         $user_lists = User::all();
         
-//        dd($user_lists);
-        
     	return view('layouts.user.user_list',['user_lists'=>$user_lists]);
+    }
+
+
+
+
+    public function index(){
+
+        return view('layouts.allinfo.index');
     }
 }

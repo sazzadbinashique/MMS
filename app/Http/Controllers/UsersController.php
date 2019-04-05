@@ -123,6 +123,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id)->delete();
+
+        return redirect('/users');
     }
 }

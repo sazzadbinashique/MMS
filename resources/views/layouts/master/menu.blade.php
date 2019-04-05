@@ -135,10 +135,11 @@
                 <ul class="nav nav-second-level">
                   <!--   <li>
                         <a href="{{url('/user_list')}}"><i class="fa fa-list"></i> User list</a>
-                    </li>
+                    </li>-->
                     <li>
                         <a href="{{url('/user_add')}}"><i class="fa fa-plus"></i>  User Add </a>
-                    </li> -->
+                    </li> 
+
                     <li>
                         <a href="{{url('/users')}}"><i class="fa fa-plus"></i> All User </a>
                     </li>

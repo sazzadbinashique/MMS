@@ -3,112 +3,57 @@
 @section('title','Extra Item')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="row">
+<!--  page header -->
+<div class="col-lg-12">
+<h1 class="page-header">All User Meal Information</h1>
 </div>
-
-
-<div>
-<table class="table table-striped table-bordered table-hover">
-                   <thead>
-                       @include('flash::message')
-                       <tr>
-                           <th>ID</th>
-                           <th>Name</th>
-                           <th>Individual Total Meal</th>
-                           <th>Total Meal</th>
-                           <th>Total Bazar </th>
-                           <th>Meal Rate </th>
-                           <th>Individual Meal Cost</th>
-                       </tr>
-                   </thead>
-                   <tbody>
-                        @foreach($user_lists as $user_list)
-
-                       <tr>
-                           <td>{{$user_list->id}}</td>
-                           <td>{{$user_list->name}}</td>
-                           <td>{{$individual_total_meal}}</td>
-                           <td>{{$total_meal}}</td>
-                           <td>{{$total_bazar}}</td>
-                           <td>{{$meal_rate}}</td>
-                           <td>{{$khorochs}}</td>
-
-                       </tr>
-                       
-                        @endforeach
-                   </tbody>
-               </table>
+<!-- end  page header -->
 </div>
+<div class="row">
+<div class="col-lg-12">
+<!--   Kitchen Sink -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h3>All User List</h3> 
+  </div>
+  <div class="panel-body">
+      <div class="table-responsive">
+          <table class="table table-striped table-bordered table-hover">
+             <thead>
+                 @include('flash::message')
+                 <tr>
+                     <th>ID</th>
+                     <th>Name</th>
+                     <th>Individual Total Meal</th>
+                     <th>Total Meal</th>
+                     <th>Total Bazar </th>
+                     <th>Meal Rate </th>
+                     <th>Individual Meal Cost</th>
+                 </tr>
+             </thead>
+             <tbody>
 
+                  @foreach($users as $user)
+                 <tr>
+                     <td>{{$user->id}}</td>
+                     <td>{{$user->name}}</td>
+                     <td>{{$person_total_meal}}</td>
+                     
+                     <td>{{$total_meal}}</td>
+
+                     <td>{{$total_bazar}}</td>
+                     
+                     <td>{{$meal_rate}}</td>
+                     
+                     <td>{{$total_cost}}</td>
+
+                 </tr>
+                 
+                  @endforeach
+             </tbody>
+          </table>
+      </div>
+  </div>
 
 @stop
