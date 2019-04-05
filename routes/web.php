@@ -108,3 +108,5 @@ Route::get('/user_add/{id}', ['uses'=>'UserController@user_add']);
 Route::post('/user_add', ['uses'=>'UserController@user_add']);
 Route::get('/user_add', ['uses'=>'UserController@user_add']);
 Route::get('/user_list', ['uses'=>'UserController@user_list']);
+
+Route::resource('/users', 'UsersController');

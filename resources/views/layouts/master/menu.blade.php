@@ -133,12 +133,17 @@
             <li>
                 <a href="#"><i class="fa fa-building-o fa-fw"></i> User<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                    <li>
+                  <!--   <li>
                         <a href="{{url('/user_list')}}"><i class="fa fa-list"></i> User list</a>
                     </li>
                     <li>
                         <a href="{{url('/user_add')}}"><i class="fa fa-plus"></i>  User Add </a>
-
+                    </li> -->
+                    <li>
+                        <a href="{{url('/users')}}"><i class="fa fa-plus"></i> All User </a>
+                    </li>
+                    <li>
+                        <a href="{{url('/users/create')}}"><i class="fa fa-plus"></i> Add User </a>
                     </li>
                 </ul>
             </li>
