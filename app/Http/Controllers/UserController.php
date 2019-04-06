@@ -25,6 +25,39 @@ class UserController extends Controller
         $users = User::where('id', 1)->get();
         // $users = User::all();
 
+// left join two table and sum 
+        /*
+        SELECT id,name,user_id , TotalInMeal  FROM `users` a LEFT JOIN (SELECT user_id, SUM( braekfast + lanch + dinner)  as TotalInMeal FROM meals GROUP BY user_id ) b on a.id = b.user_id
+        */
+
+
+ // three table left join
+        /*
+
+        SELECT 
+        id, name,TotalMeal,TotalCollection 
+        FROM users a
+        LEFT JOIN  (SELECT user_id, SUM(dinner) as TotalMeal FROM meals GROUP BY user_id) b ON a.id = b.user_id
+        LEFT JOIN  (SELECT user_id, SUM(amount) as TotalCollection FROM collections GROUP BY user_id)c ON a.id = c.user_id
+
+        */
+
+
+
+// left join 
+
+/*
+
+        SELECT 
+    users.id ID,
+  users.name Name,  
+   SUM(meals.braekfast+dinner+lanch) TotalMeal,  
+  SUM(collections.amount) TotalAmount
+FROM users
+LEFT JOIN meals ON meals.id = users.id
+LEFT JOIN collections ON collections.id = users.id
+
+*/
         $total_bazar= DB:: table('bazar_details')->sum('amount');
         $total_meal= ceil(DB::table('meals')->sum(DB::raw('braekfast + lanch + dinner')));
         $meal_rate= round( $total_bazar/$total_meal, 2);

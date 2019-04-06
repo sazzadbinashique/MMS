@@ -39,8 +39,8 @@
                             <td>{{$user->id}}</td>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
-                            <td>{{$user->created_at? $user->created_at->diffForHumans(\Carbon\Carbon::now()): ''}}</td>
-                            <td>{{$user->updated_at? $user->updated_at->diffForHumans(\Carbon\Carbon::now()): ''}}</td>
+                            <td>{{$user->created_at? $user->created_at->diffForHumans(\Carbon\Carbon::now()): 'not created'}}</td>
+                            <td>{{$user->updated_at? $user->updated_at->diffForHumans(\Carbon\Carbon::now()): ' not updated'}}</td>
                             <td>
                                 <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary">Edit</a>
                              </td>

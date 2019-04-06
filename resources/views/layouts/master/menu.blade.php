@@ -34,10 +34,10 @@
                 <a href="#"><i class="fa fa-user fa-fw"></i> Collection<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/collection_list')}}"><i class="fa fa-list"></i> Collection list</a>
+                        <a href="{{url('/collections')}}"><i class="fa fa-list"></i>All Collection</a>
                     </li>
                     <li>
-                        <a href="{{url('/collection_add')}}"><i class="fa fa-plus"></i> Collection add</a>
+                        <a href="{{url('/collections/create')}}"><i class="fa fa-plus"></i>Add Collection</a>
                     </li>
 
                 </ul>
@@ -47,10 +47,10 @@
                 <a href="#"><i class="fa fa-clock-o fa-fw"></i> Menu<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/menu_list')}}"><i class="fa fa-plus"></i> Menu List</a>
+                        <a href="{{url('/bazar_menus')}}"><i class="fa fa-plus"></i>All Bazar Menu </a>
                     </li>                            
                     <li>
-                        <a href="{{url('/menu_add')}}"><i class="fa fa-list"></i> Menu Add</a>
+                        <a href="{{url('/bazar_menus/create')}}"><i class="fa fa-list"></i>Add Menu</a>
                     </li>
                 </ul>
             </li> 
@@ -59,10 +59,10 @@
                 <a href="#"><i class="fa fa-building-o fa-fw"></i> Extra Item<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/extra_item_list')}}"><i class="fa fa-list"></i> Extra Item list</a>
+                        <a href="{{url('/extra_items')}}"><i class="fa fa-list"></i>All Extra Item </a>
                     </li>
                     <li>
-                        <a href="{{url('/extra_item_add')}}"><i class="fa fa-plus"></i> Extra Item add</a>
+                        <a href="{{url('/extra_items/create')}}"><i class="fa fa-plus"></i>Add Extra Item </a>
 
                     </li>
                 </ul>
@@ -72,10 +72,10 @@
                 <a href="#"><i class="fa fa-money fa-fw"></i>Additional<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/additional_list')}}"><i class="fa fa-list"></i> Additional List</a>
+                        <a href="{{url('/additionals')}}"><i class="fa fa-list"></i> All Additional</a>
                     </li>
                     <li>
-                        <a href="{{url('/additional_add')}}"><i class="fa fa-plus"></i> Additional Add </a>
+                        <a href="{{url('/additionals/create')}}"><i class="fa fa-plus"></i> Add Additional</a>
                     </li> 
                 </ul>                           
             </li>
@@ -84,10 +84,10 @@
                 <ul class="nav nav-second-level">
 
                     <li>
-                        <a href="{{url('/meal_list')}}"><i class="fa fa-plus"></i> Meal List</a>
+                        <a href="{{url('/meals')}}"><i class="fa fa-plus"></i> Meal List</a>
                     </li>
                     <li>
-                        <a href="{{url('/meal_add')}}"><i class="fa fa-list"></i> Meal Add</a>
+                        <a href="{{url('/meals/create')}}"><i class="fa fa-list"></i> Meal Add</a>
                     </li>                            
                 </ul>
             </li>
@@ -96,10 +96,10 @@
                 <a href="#"><i class="fa fa-building-o fa-fw"></i> Bazar<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/bazar_list')}}"><i class="fa fa-list"></i> Bazar List</a>
+                        <a href="{{url('/bazars')}}"><i class="fa fa-list"></i>All Bazar </a>
                     </li>
                     <li>
-                        <a href="{{url('/bazar_add')}}"><i class="fa fa-plus"></i>  Bazar Add </a>
+                        <a href="{{url('/bazars/create')}}"><i class="fa fa-plus"></i>Add Bazar </a>
 
                     </li>
                 </ul>
@@ -109,10 +109,10 @@
                 <a href="#"><i class="fa fa-building-o fa-fw"></i>Bazar Details<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/bazar_details_list')}}"><i class="fa fa-list"></i> Bazar Details List</a>
+                        <a href="{{url('/bazar_details')}}"><i class="fa fa-list"></i>All Bazar Detail</a>
                     </li>
                     <li>
-                        <a href="{{url('/bazar_details_add')}}"><i class="fa fa-plus"></i>  Bazar Details Add </a>
+                        <a href="{{url('/bazar_details/create')}}"><i class="fa fa-plus"></i>Add Bazar Detail </a>
 
                     </li>
                 </ul>
@@ -122,10 +122,10 @@
                 <a href="#"><i class="fa fa-building-o fa-fw"></i> Month<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/month_list')}}"><i class="fa fa-list"></i> Month list</a>
+                        <a href="{{url('/months')}}"><i class="fa fa-list"></i> Month list</a>
                     </li>
                     <li>
-                        <a href="{{url('/month_add')}}"><i class="fa fa-plus"></i>  Month Add </a>
+                        <a href="{{url('/months/create')}}"><i class="fa fa-plus"></i>  Month Add </a>
 
                     </li>
                 </ul>
