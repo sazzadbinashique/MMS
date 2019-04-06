@@ -25,9 +25,12 @@
                                 @include('flash::message')
                          {!! Form::open(['method'=>'POST', 'action'=> 'BazarMenusController@store','role'=>'form']) !!}
                                 {{ Form::hidden('id') }}
-                                        <div class="form-group">
+                                        <div class="form-group{{$errors->has('menu_item'? 'has-error':'')}} ">
                                             <label>Menu Name:</label>
                                              {!! Form::text("menu_item", null, ['class' => 'form-control', 'placeholder'=> 'menu_name...', 'id'=>'menu_item']) !!}
+                                             @if($errors->has('menu_item'))
+                                                <span class="text-danger"><strong>{{$errors->first('menu_item')}}</strong></span>
+                                              @endif
                                         </div>   
                                         <div class="col-lg-6 col-lg-push-8">
                                             <button type="submit" class="btn btn-primary">Submit </button>

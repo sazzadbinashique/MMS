@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Collection;
 use App\User;
+use App\Http\Requests\CreateCollectionRequest;
+use Carbon\Carbon;
+use Session;
+use Flash;
+
+
 
 class CollectionsController extends Controller
 {
@@ -38,9 +44,13 @@ class CollectionsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCollectionRequest $request)
     {
-        //
+        $input=$request->all();
+        Collection::create($input);
+
+        Flash::success('The collection has been created successfully');
+        return redirect('/collections');
     }
 
     /**
@@ -76,9 +86,15 @@ class CollectionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateCollectionRequest $request, $id)
     {
-        //
+        $collection = Collection::findOrFail($id);
+        $input= $request->all();
+        $collection->update($input);
+
+        Flash::success('Collection has been updated Succesfully');
+        return redirect('/collections');
+
     }
 
     /**
@@ -89,6 +105,11 @@ class CollectionsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $collection = Collection::findOrFail($id)->delete();
+
+        Flash::error('Collection has been Deleted Succesfully');
+        return redirect('/collections');
+
+
     }
 }

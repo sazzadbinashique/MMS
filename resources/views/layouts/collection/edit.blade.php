@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         @include('flash::message')
-                         {!! Form::model($collection,['method'=>'POST', 'action'=> ['CollectionsController@update', $collection->id],'role'=>'form']) !!}
+                         {!! Form::model($collection,['method'=>'PATCH', 'action'=> ['CollectionsController@update', $collection->id],'role'=>'form']) !!}
                         {{ Form::hidden('id') }}
                             <div class="form-group">
                                 <label> Member Name: </label>

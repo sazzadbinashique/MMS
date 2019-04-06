@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ExtraItem;
+use Flash;
 
 class ExtraItemsController extends Controller
 {
@@ -38,7 +39,11 @@ class ExtraItemsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        ExtraItem::create($input);
+
+        Flash::success('ExtraItem has been Created successfully');
+        return redirect('/extra_items');
     }
 
     /**
@@ -75,7 +80,14 @@ class ExtraItemsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $extraitem = ExtraItem::findOrFail($id);
+
+        $input=$request->all();
+        $extraitem->update($input);
+
+        Flash::success('ExtraItem has been Updated successfully');
+
+        return redirect('/extra_items');
     }
 
     /**
@@ -86,6 +98,12 @@ class ExtraItemsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $extraitem = ExtraItem::findOrFail($id)->delete();
+
+        Flash::error('ExtraItem Has Been Deleted successfully');
+
+        return redirect('/extra_items');
+
+
     }
 }
