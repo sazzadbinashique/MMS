@@ -36,9 +36,13 @@ class MonthsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateMonthRequest $request)
     {
-        //
+        $input=$request->all();
+        Month::create($input);
+
+        Flash::success('Month has been Create Successfully');
+        return redirect('/months');
     }
 
     /**
@@ -72,9 +76,14 @@ class MonthsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateMonthRequest $request, $id)
     {
-        //
+        $month = Month::findOrFail($id);
+        $input =$request->all();
+        Month::update($input);
+
+        Flash::success('Month has been Updated Successfully');
+        return redirect('/months');
     }
 
     /**
@@ -85,6 +94,11 @@ class MonthsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $month = Month::findOrFail($id)->delete();
+
+        Flash::error('Month Has been Deleted Successfully'); 
+
+        return redirect('/months');
+
     }
 }

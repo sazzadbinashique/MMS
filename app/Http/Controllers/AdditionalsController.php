@@ -42,7 +42,11 @@ class AdditionalsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Additional::create($input);
+
+        Flash::success('Additional has been Created Successfully');
+        return redirect('/additionals');
     }
 
     /**
@@ -65,10 +69,7 @@ class AdditionalsController extends Controller
     public function edit($id)
     {
         $additional = Additional::findOrFail($id);
-
-        // dd($additional);
         $extra_items = ExtraItem::pluck('extra_item', 'id');
-
 
         return view('layouts.addition.edit', compact('additional', 'extra_items'));
 
@@ -83,7 +84,13 @@ class AdditionalsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $additional = Additional::findOrFail($id);
+        $input = $request->all();
+        $additional->update($input);
+
+        Flash::success('Additional has been Updated Successfully'); 
+        return redirect('/additionals');
+
     }
 
     /**
@@ -94,6 +101,8 @@ class AdditionalsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $additional = Additional::findOrFail($id)->delete();
+        Flash::error('Additional has been Deleted Successfully');
+        return redirect('/additionals');
     }
 }

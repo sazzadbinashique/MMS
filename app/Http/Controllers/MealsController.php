@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Meal;
 use App\User;
+use Flash;
+use Session;
 
 class MealsController extends Controller
 {
@@ -39,9 +41,15 @@ class MealsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateMealRequest $request)
     {
-        //
+        $input = $request->all();
+
+        Meal::create($input);
+
+        Flash::success('Meal has been Created Succesfully');
+
+        return redirect('/meals');
     }
 
     /**
@@ -76,9 +84,16 @@ class MealsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateMealRequest $request, $id)
     {
-        //
+        $meal= Meal::findOrFail($id);
+        $input=$request->all();
+        $meal->update($input);
+
+        Flash::success('Meal has been Updated Succesfully');
+
+        return redirect('/meals');
+
     }
 
     /**
@@ -89,6 +104,9 @@ class MealsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $meal= Meal::findOrFail($id)->delete();
+
+        Flash::error('Meal has been Deleted Succesfully');
+        return redirect('/meals');
     }
 }

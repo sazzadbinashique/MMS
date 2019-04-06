@@ -42,7 +42,11 @@ class BazarsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Bazar::create($input);
+
+        Flash::success('Bazar has been Created Successfully'); 
+        return redirect('/bazars'); 
     }
 
     /**
@@ -78,9 +82,14 @@ class BazarsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateBazarsRequest $request, $id)
     {
-        //
+        $bazar = Bazar::findOrFail($id);
+        $input = $request->all();
+        $bazar->update($input); 
+
+        Flash::success('Bazars has been Updated Successfully'); 
+        return redirect('/bazars');
     }
 
     /**
@@ -91,6 +100,10 @@ class BazarsController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $bazar = Bazar::findOrFail($id)->delete();
+
+       Flash::error('Bazar has been Deleted Successfully');
+       return redirect('/bazars'); 
+
     }
 }
