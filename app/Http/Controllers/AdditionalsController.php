@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Additional;
 use App\ExtraItem;
+use Flash;
 
 
 class AdditionalsController extends Controller
@@ -43,7 +44,10 @@ class AdditionalsController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        // dd($input);
+
         Additional::create($input);
+        // dd($input);
 
         Flash::success('Additional has been Created Successfully');
         return redirect('/additionals');

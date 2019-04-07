@@ -117,7 +117,7 @@ Route::resource('/months', 'MonthsController');
 
 // Route::get('/user_add/{id}', ['uses'=>'UserController@user_add']);
 // Route::post('/user_add', ['uses'=>'UserController@user_add']);
-// Route::get('/user_add', ['uses'=>'UserController@user_add']);
+Route::get('/user_add', ['uses'=>'UserController@user_add']);
 // Route::get('/user_list', ['uses'=>'UserController@user_list']);
 // Route::get('/allinfo', ['uses'=>'UserController@index']);
 // Route::get('/allinfo/{id}', ['uses'=>'UserController@index'])->name('allinfo.edit');

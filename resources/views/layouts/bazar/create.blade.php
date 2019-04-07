@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label> Month Name: </label>
-                                         {!! Form::select('Month_id', $months, null, ['placeholder' => 'Add Your Name','id'=>'month_id','class'=>'form-control']) !!}
+                                         {!! Form::select('month_id', $months, null, ['placeholder' => 'Add Your Name','id'=>'month_id','class'=>'form-control']) !!}
                                     </div>
                                     <div class="form-group">
                                         <label> Expected Date: </label>

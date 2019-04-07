@@ -22,8 +22,36 @@ class UserController extends Controller
     
     public function user_add(){
         
-        $users = User::where('id', 1)->get();
+        // $users = User::where('id', 1)->get();
         // $users = User::all();
+        
+   // $users= User::query()->select(['id','name', ])
+   //  ->withCount([
+   //      'meals as total_meals' => function ($query) {
+   //          $query->select(DB::raw('SUM(breakfast + dinner + lunch)'));
+   //      },
+   //      'collections as total_collections' => function ($query) {
+   //          $query->select(DB::raw('SUM(amount)'));
+   //      },
+   //  ])
+   //  ->get();
+
+ 
+        $users = User::selectRaw('sum(meals.braekfast+dinner+lanch) AS TotalMeal')
+        ->leftjoin('meals', 'users.id', '=', 'meals.user_id')
+        ->groupBy('user_id')
+        ->get(['id', 'name']);
+        
+
+            return $users;
+
+
+
+
+
+
+
+
 
 // left join two table and sum 
         /*

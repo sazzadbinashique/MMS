@@ -28,7 +28,7 @@
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label> Item Name: </label>
-                                        {!! Form::select('extra_item_id', $extra_items, null, ['id'=>'extra_item_id','class'=>'form-control']) !!}
+                                        {!! Form::select('extra_items_id', $extra_items, null, ['id'=>'extra_item_id','class'=>'form-control']) !!}
                                     </div>
                                     <div class="form-group">
                                         <label> Enter Date: </label>

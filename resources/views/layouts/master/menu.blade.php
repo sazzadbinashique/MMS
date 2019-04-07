@@ -137,7 +137,7 @@
                         <a href="{{url('/user_list')}}"><i class="fa fa-list"></i> User list</a>
                     </li>-->
                     <li>
-                        <a href="{{url('/user_add')}}"><i class="fa fa-plus"></i>  User Add </a>
+                        <a href="{{url('/user_add')}}"><i class="fa fa-plus"></i>  All information </a>
                     </li> 
 
                     <li>

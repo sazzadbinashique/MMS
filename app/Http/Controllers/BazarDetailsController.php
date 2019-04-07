@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\User;
 use App\BazarDetail;
 use App\BazarMenu;
+use App\Http\Requests\CreateBazarDetailRequest;
+use Flash;
+
 
 class BazarDetailsController extends Controller
 {
@@ -43,7 +46,7 @@ class BazarDetailsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateBazarDetailsRequest $request)
+    public function store(CreateBazarDetailRequest $request)
     {
         $input=$request->all();
         BazarDetail::create($input);
@@ -88,7 +91,7 @@ class BazarDetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateBazarDetailsRequest $request, $id)
+    public function update(CreateBazarDetailRequest $request, $id)
     {
          $bazar_detail = BazarDetail::findOrFail($id); 
          $input= $request->all();
