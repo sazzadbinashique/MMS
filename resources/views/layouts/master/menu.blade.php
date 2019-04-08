@@ -31,6 +31,10 @@
                 <a href="{{url('/dashboard')}}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
             </li>
             <li>
+                <a href="{{url('/user_add')}}"><i class="fa fa-building-o fa-fw"></i>  All information </a>
+                    
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-user fa-fw"></i> Collection<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
@@ -133,12 +137,6 @@
             <li>
                 <a href="#"><i class="fa fa-building-o fa-fw"></i> User<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
-                  <!--   <li>
-                        <a href="{{url('/user_list')}}"><i class="fa fa-list"></i> User list</a>
-                    </li>-->
-                    <li>
-                        <a href="{{url('/user_add')}}"><i class="fa fa-plus"></i>  All information </a>
-                    </li> 
 
                     <li>
                         <a href="{{url('/users')}}"><i class="fa fa-plus"></i> All User </a>
@@ -148,6 +146,7 @@
                     </li>
                 </ul>
             </li>
+
         </ul>
         <!-- end side-menu -->
     </div>

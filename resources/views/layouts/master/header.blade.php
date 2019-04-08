@@ -47,4 +47,4 @@ navbar top -->
             <!-- end navbar-top-links -->
 
         </nav>
-        <!-- end navbar top
+        <!-- end navbar top-->
