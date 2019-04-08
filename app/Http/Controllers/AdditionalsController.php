@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateAdditionalRequest;
 use App\Additional;
 use App\ExtraItem;
 use Flash;
@@ -41,7 +42,7 @@ class AdditionalsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateAdditionalRequest $request)
     {
         $input = $request->all();
         // dd($input);
@@ -86,7 +87,7 @@ class AdditionalsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateAdditionalRequest $request, $id)
     {
         $additional = Additional::findOrFail($id);
         $input = $request->all();

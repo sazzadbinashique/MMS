@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Month;
+use App\Http\Requests\CreateMonthRequest;
+use Flash;
+use Session;
 
 class MonthsController extends Controller
 {
@@ -80,7 +83,7 @@ class MonthsController extends Controller
     {
         $month = Month::findOrFail($id);
         $input =$request->all();
-        Month::update($input);
+        $month->update($input);
 
         Flash::success('Month has been Updated Successfully');
         return redirect('/months');

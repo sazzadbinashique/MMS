@@ -25,9 +25,12 @@
                         @include('flash::message')
                          {!! Form::model($extraitem,['method'=>'PATCH', 'action'=> ['ExtraItemsController@update', $extraitem->id],'role'=>'form']) !!}
                         {{ Form::hidden('id') }}
-                        <div class="form-group">
+                        <div class="form-group{{$errors->has('extra_item')? 'has-error': ''}}">
                             <label>Extra Item Name:</label>
-                            {!! Form::text("extra_item", null, ['class' => 'form-control', 'placeholder'=> 'menu_name...', 'id'=>'extra_item']) !!}  
+                            {!! Form::text("extra_item", null, ['class' => 'form-control', 'placeholder'=> 'menu_name...', 'id'=>'extra_item']) !!}
+                            @if($errors->has('extra_item'))
+                                    <span class="text-danger"><strong>{{$errors->first('extra_item')}}</strong></span>
+                            @endif    
                         </div>   
                         <div class="col-lg-6 col-lg-push-8">
                             <button type="submit" class="btn btn-primary">Submit </button>

@@ -26,17 +26,26 @@
                         {{ Form::hidden('id') }}
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <div class="form-group">
+                                    <div class="form-group{{$errors->has('extra_items_id')? 'has-error': ''}}">
                                         <label> Item Name: </label>
                                         {!! Form::select('extra_items_id', $extra_items, null, ['id'=>'extra_item_id','class'=>'form-control']) !!}
+                                        @if($errors->has('extra_items_id'))
+                                            <span class="text-danger"><strong>{{$errors->first('extra_items_id')}}</strong></span>
+                                        @endif  
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group{{$errors->has('date')? 'has-error': ''}}">
                                         <label> Enter Date: </label>
                                         {!! Form::date("date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'date', 'value'=> old('date'),]) !!}
+                                        @if($errors->has('date'))
+                                            <span class="text-danger"><strong>{{$errors->first('date')}}</strong></span>
+                                        @endif  
                                     </div> 
-                                    <div class="form-group">
+                                    <div class="form-group{{$errors->has('amount')? 'has-error': ''}}">
                                         <label> Extra Amount: </label>
-                                         {!! Form::number("amount", null, ['class' => 'form-control', 'placeholder'=> 'Enter Extra Amount...', 'id'=>'extra_amount', 'value'=> old('extra_amount'),]) !!}
+                                         {!! Form::number("amount", null, ['class' => 'form-control', 'placeholder'=> 'Enter Extra Amount...', 'id'=>'extra_amount']) !!}
+                                           @if($errors->has('amount'))
+                                                <span class="text-danger"><strong>{{$errors->first('amount')}}</strong></span>
+                                            @endif  
                                     </div>  
 
                                     <div class="col-lg-12 col-lg-push-8">

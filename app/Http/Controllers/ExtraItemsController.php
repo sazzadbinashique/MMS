@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use App\Http\Requests\CreateExtraItemRequest;
 use App\ExtraItem;
 use Flash;
 
@@ -37,7 +39,7 @@ class ExtraItemsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateExtraItemRequest $request)
     {
         $input = $request->all();
         ExtraItem::create($input);
@@ -78,7 +80,7 @@ class ExtraItemsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateExtraItemRequest $request, $id)
     {
         $extraitem = ExtraItem::findOrFail($id);
 
