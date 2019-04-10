@@ -1,2 +1,2 @@
-# MMS is Mess Management System
+# MMS is Meal Management System
 ## Techonology laravel 
