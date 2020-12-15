@@ -39,9 +39,8 @@
                                     <span class="text-danger"><strong>{{$errors->first('year')}}</strong></span>
                                 @endif 
                             </div>    
-                            <div class="col-lg-6 col-lg-push-8">
-                                <button type="submit" class="btn btn-primary">Submit </button>
-                                <button type="reset" class="btn btn-success">Reset </button>
+                            <div class="col-lg-6 col-lg-push-10">
+                                <button type="submit" class="btn btn-success">Update </button>
                             </div>
                         {!! Form::close() !!}
                     </div>

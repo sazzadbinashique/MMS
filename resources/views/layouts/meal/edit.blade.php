@@ -22,7 +22,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     @include('flash::message')
-                     {!! Form::model($meal, ['method'=>'POST', 'action'=>['MealsController@update', $meal->id],'role'=>'form']) !!}
+                     {!! Form::model($meal, ['method'=>'PATCH', 'action'=>['MealsController@update', $meal->id],'role'=>'form']) !!}
                     {{ Form::hidden('id') }}
                     <div class="row">
                         <div class="col-lg-6">
@@ -49,9 +49,8 @@
                                 {!! Form::text("dinner", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Dinner...', 'id'=>'dinner']) !!}
                             </div>
 
-                            <div class="col-lg-12 col-lg-push-8">
-                                <button type="submit" class="btn btn-primary">Submit </button>
-                                <button type="reset" class="btn btn-success">Reset </button>
+                            <div class="col-lg-12 col-lg-push-10">
+                                <button type="submit" class="btn btn-success">Update </button>
                             </div>
                         </div>              
                     </div> 

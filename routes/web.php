@@ -11,14 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
-
+Route::get('/', ['uses'=>'FrontendController@index']);
 
 Auth::routes();
-
-//Route::get('/master', 'HomeController@index');
 
 
 Route::get('/auth/login', function() {
@@ -29,10 +24,8 @@ Route::get('/auth/register', function() {
     return view('auth.register');
 });
 
-Route::get('/dashboard', function () {
-        return view('layouts.dashboard_content');
-    });
 
+Route::get('/dashboard', ['uses'=>'DashboardController@index'])->name('dashboard');
 
 Route::resource('/collections', 'CollectionsController');
 Route::resource('/additionals', 'AdditionalsController');
@@ -44,6 +37,8 @@ Route::resource('/bazar_menus', 'BazarMenusController');
 Route::resource('/months', 'MonthsController');
 Route::resource('/users', 'UsersController');
 
-Route::get('/user_add', ['uses'=>'UserController@user_add']);
+Route::get('/user/profile', ['uses'=>'UserController@profile'])->name('user.profile');
+Route::get('/meal/record', ['uses'=>'UserController@meal_record'])->name('meal.record');
+Route::get('/allinfo', ['uses'=>'UserController@info'])->name('all.info');
 
 

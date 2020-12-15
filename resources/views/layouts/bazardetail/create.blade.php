@@ -44,7 +44,6 @@
                                     </div> 
                                     <div class="col-lg-12 col-lg-push-8">
                                         <button type="submit" class="btn btn-primary">Submit </button>
-                                        <button type="reset" class="btn btn-success">Reset </button>
                                     </div>
                                 </div>                                                         
                             </div>

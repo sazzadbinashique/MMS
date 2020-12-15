@@ -1,6 +1,6 @@
 @extends('layouts.master.layout')
 
-@section('title','Collection Add')
+@section('title','User Add')
 
 @section('content')
 <div class="row">
@@ -15,7 +15,7 @@
         <!-- Form Elements -->
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4>Collection Add Form</h4>
+                <h4>User Add Form</h4>
             </div>
             <div class="panel-body">
                 <div class="row">
@@ -43,8 +43,6 @@
                                     </span>
                                 @endif
                         </div>
-                        
-
                           <div class="form-group {{$errors->has('password')? 'has-error': ''}}">
                               {!! Form::label('password', 'Password:') !!}
                               {!! Form::password('password', ['class'=>'form-control'])!!}
@@ -53,9 +51,8 @@
                               @endif
                           </div>
                                 
-                            <div class="col-lg-6 col-lg-push-8">
-                                <button type="submit" class="btn btn-primary">Submit </button>
-                                <button type="reset" class="btn btn-success">Reset </button>
+                            <div class="col-lg-6 col-lg-push-10">
+                                <button type="submit" class="btn btn-primary">Save </button>
                             </div>
                         {!! Form::close() !!}
                     </div>

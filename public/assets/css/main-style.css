@@ -8,8 +8,8 @@ Author: http://binarytheme.com
 
 /* user image section */
 .user-section {
-    margin-top:20px;
-    font-size:22px;
+    /*margin-top:20px;*/
+    font-size:14px;
     background-color:rgb(83, 163, 163);
 }
 .user-section-inner {
@@ -21,8 +21,8 @@ border-radius: 3px;
 overflow: hidden;
 display: inline-block;
 float: left;
-margin-right: 15px;
-margin-top: 20px;
+margin-right: 10px;
+margin-top: 10px;
 }
     .user-section-inner img {
         margin-left:10px;

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use App\User;
 use App\Meal;
@@ -21,8 +22,9 @@ use Session;
 class UserController extends Controller
 {
     
-    public function user_add(){
-             
+    public function meal_record(){
+        $meal_rate ='0';
+
         $users = DB::select('SELECT 
         id, name,TotalMeal,TotalCollection 
         FROM users a
@@ -32,28 +34,30 @@ class UserController extends Controller
 
         $total_bazar= DB:: table('bazar_details')->sum('amount');
         $total_meal= ceil(DB::table('meals')->sum(DB::raw('braekfast + lanch + dinner')));
-        $meal_rate= round( $total_bazar/$total_meal, 2);
+        if (!empty($total_meal)){
+            $meal_rate= round( $total_bazar/$total_meal, 2);
+        }
+
 
         $total_extra= ceil(DB::table('additionals')->sum(DB::raw('amount')));
-        $total_extra_rate = ceil($total_extra/8);
-        $khala = 450;
+        $total_extra_rate = ceil($total_extra/4);
+        $khala = 500;
         
-        return view('layouts.user.user_add', compact('users','total_bazar','total_meal','meal_rate','total_extra', 'total_extra_rate', 'khala'));
+        return view('layouts.record', compact('users','total_bazar','total_meal','meal_rate','total_extra', 'total_extra_rate', 'khala'));
     }
     
 
-    public function user_list(){
+    public function info(){
         
-        $user_lists = User::all();
-        
-    	return view('layouts.user.user_list',['user_lists'=>$user_lists]);
+    	return view('layouts.allinfo.index');
     }
 
 
 
 
-    public function index(){
+    public function profile(){
+        $user = Auth::user();
 
-        return view('layouts.allinfo.index');
+        return view('layouts.user.profile', compact('user'));
     }
 }

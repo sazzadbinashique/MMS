@@ -16,7 +16,10 @@
     <!--   Kitchen Sink -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3>All User List</h3> 
+            <h3>All User List</h3>
+            <div class="">
+                <a href="{{url('/users/create')}}" class="btn btn-success">Add New User</a>
+            </div>
         </div>
         <div class="panel-body">
             <div class="table-responsive">

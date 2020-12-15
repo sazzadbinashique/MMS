@@ -9,7 +9,7 @@ navbar top -->
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{url('/dashboard')}}">
-                    <img src="{{asset('assets/img/logo.png')}}" alt="" />
+                    <img src="{{asset('assets/img/logo.png')}}" alt="logo image" />
                 </a>
             </div>
             <!-- end navbar-header -->
@@ -19,11 +19,11 @@ navbar top -->
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-3x"></i>
+                        <span><i class="fa fa-user fa-3x"></i></span>
                     </a>
                     <!-- dropdown user-->
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i>User Profile</a>
+                        <li><a href="{{route('user.profile')}}"><i class="fa fa-user fa-fw"></i>User Profile</a>
                         </li>
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>

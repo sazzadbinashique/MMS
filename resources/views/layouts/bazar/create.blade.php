@@ -38,9 +38,8 @@
                                         <label> Expected Date: </label>
                                         {!! Form::date("expected_date", null, ['class' => 'form-control', 'placeholder'=> 'Enter your Date...', 'id'=>'Expected_date']) !!}
                                     </div> 
-                                    <div class="col-lg-12 col-lg-push-8">
-                                        <button type="submit" class="btn btn-primary">Submit </button>
-                                        <button type="reset" class="btn btn-success">Reset </button>
+                                    <div class="col-lg-12 col-lg-push-10">
+                                        <button type="submit" class="btn btn-success">Submit </button>
                                     </div>
                                 </div>                          
                             </div>     

@@ -16,7 +16,10 @@
 <!--   Kitchen Sink -->
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3>Menu List</h3> 
+        <h3>Menu List</h3>
+        <div class="">
+            <a href="{{url('/bazar_menus/create')}}" class="btn btn-primary">Add Menu Item</a>
+        </div>
     </div>
 <div class="panel-body">
 <div class="table-responsive">

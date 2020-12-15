@@ -1,6 +1,6 @@
 @extends('layouts.master.layout')
 
-@section('title','')
+@section('title','Additional Add')
 
 @section('content')
 
@@ -48,9 +48,8 @@
                                             @endif  
                                     </div>  
 
-                                    <div class="col-lg-12 col-lg-push-8">
-                                        <button type="submit" class="btn btn-primary">Submit </button>
-                                        <button type="reset" class="btn btn-success">Reset </button>
+                                    <div class="col-lg-12 col-lg-push-10">
+                                        <button type="submit" class="btn btn-success">Submit </button>
                                     </div>
                                 </div>             
                             </div> 

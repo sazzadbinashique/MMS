@@ -11,7 +11,10 @@
                         <img src="{{asset('assets/img/user.jpg')}}" alt="">
                     </div>
                     <div class="user-info">
-                        {{ Auth::user()->name }}   
+                        <div><strong>{{ Auth::user()->name }}</strong></div>
+                        <div class="user-text-online">
+                            <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
+                        </div>
                     </div>
                 </div>
                 <!--end user image section-->
@@ -29,10 +32,6 @@
             </li>
             <li class="selected">
                 <a href="{{url('/dashboard')}}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
-            </li>
-            <li>
-                <a href="{{url('/user_add')}}"><i class="fa fa-building-o fa-fw"></i>  All information </a>
-                    
             </li>
             <li>
                 <a href="#"><i class="fa fa-user fa-fw"></i> Collection<span class="fa arrow"></span></a>

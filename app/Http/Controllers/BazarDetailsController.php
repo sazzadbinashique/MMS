@@ -19,7 +19,7 @@ class BazarDetailsController extends Controller
      */
     public function index()
     {
-        $bazar_details = BazarDetail::all();
+        $bazar_details = BazarDetail::orderBy('id', 'desc')->paginate(10);
 
         return view('layouts.bazardetail.index', compact('bazar_details'));
     }

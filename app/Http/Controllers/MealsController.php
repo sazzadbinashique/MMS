@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateMealRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateMealRequest;
 use App\Meal;
 use App\User;
 use Flash;
+use Illuminate\Support\Facades\Input;
 use Session;
 
 class MealsController extends Controller
@@ -18,7 +20,7 @@ class MealsController extends Controller
      */
     public function index()
     {
-        $meals = Meal::all();
+        $meals = Meal::orderBy('id', 'desc')->paginate(10);
 
 
         return view('layouts.meal.index', compact('meals'));
@@ -44,13 +46,19 @@ class MealsController extends Controller
      */
     public function store(CreateMealRequest $request)
     {
+
         $input = $request->all();
+        $date_exits = Meal::where([['user_id', '=',Input::get('user_id')],['date', '=', Input::get('date')]])->first();
+        if ($date_exits === null) {
+            Meal::create($input);
+            Flash::success('Meal has been Created Succesfully');
 
-        Meal::create($input);
+            return redirect('/meals');
+        }
 
-        Flash::success('Meal has been Created Succesfully');
+        Flash::success('Already Date has been Created Succesfully');
 
-        return redirect('/meals');
+        return redirect()->back();
     }
 
     /**
@@ -85,13 +93,20 @@ class MealsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateMealRequest $request, $id)
+    public function update(UpdateMealRequest $request, $id)
     {
         $meal= Meal::findOrFail($id);
         $input=$request->all();
-        $meal->update($input);
+        $date_exits = Meal::where([['user_id', '=',Input::get('user_id')],['date', '=', Input::get('date')]])->first();
+        if ($date_exits === null) {
+            $meal->update($input);
+            Flash::success('Meal has been Updated Succesfully');
 
-        Flash::success('Meal has been Updated Succesfully');
+            return redirect('/meals');
+        }
+
+
+        Flash::success('Already User date has been Created Succesfully');
 
         return redirect('/meals');
 

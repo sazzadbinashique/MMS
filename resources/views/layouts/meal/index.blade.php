@@ -16,8 +16,12 @@
       <!--   Kitchen Sink -->
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3>Meal List</h3> 
+                <h3>Meal List</h3>
+                <div class="">
+                    <a href="{{url('/meals/create')}}" class="btn btn-primary">Add Meal</a>
+                </div>
             </div>
+
 <div class="panel-body">
     <div class="table-responsive">
         <table class="table table-striped table-bordered table-hover">
@@ -40,7 +44,7 @@
                 @foreach($meals as $meal)
                 <tr>
                     <td>{{$meal->id}}</td>
-                    <td>{{$meal->user_id}}</td>
+                    <td>{{$meal->user->name}}</td>
                     <td>{{$meal->braekfast}}</td>
                     <td>{{$meal->lanch}}</td>
                     <td>{{$meal->dinner}}</td>
@@ -61,6 +65,8 @@
                 @endforeach
             </tbody>
         </table>
+        {{ $meals->links() }}
+
     </div>
 </div>
 

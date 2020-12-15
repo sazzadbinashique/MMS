@@ -16,7 +16,10 @@
 <!--   Kitchen Sink -->
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3>Bazar List</h3> 
+            <h3>Bazar List</h3>
+            <div class="">
+                <a href="{{url('/bazars/create')}}" class="btn btn-primary">Add Meal</a>
+            </div>
     </div>
     <div class="panel-body">
         <div class="table-responsive">
