@@ -49,7 +49,7 @@ class BazarsController extends Controller
         Bazar::create($input);
 
         Flash::success('Bazar has been Created Successfully'); 
-        return redirect('/bazars'); 
+        return redirect()->route('bazars.index');
     }
 
     /**
@@ -91,8 +91,8 @@ class BazarsController extends Controller
         $input = $request->all();
         $bazar->update($input); 
 
-        Flash::success('Bazars has been Updated Successfully'); 
-        return redirect('/bazars');
+        Flash::success('Bazars has been Updated Successfully');
+        return redirect()->route('bazars.index');
     }
 
     /**
@@ -106,7 +106,7 @@ class BazarsController extends Controller
        $bazar = Bazar::findOrFail($id)->delete();
 
        Flash::error('Bazar has been Deleted Successfully');
-       return redirect('/bazars'); 
+       return redirect()->back();
 
     }
 }

@@ -48,7 +48,7 @@ class BazarMenusController extends Controller
         BazarMenu::create($input);
 
         Flash::success('The BazarMenu has been Created Successfully');
-        return redirect('/bazar_menus');
+        return redirect()->route('bazar_menus.index');
     }
 
     /**
@@ -90,7 +90,7 @@ class BazarMenusController extends Controller
 
         Flash::success('The BazarMenu has been Updated Successfully');
 
-        return redirect('/bazar_menus');
+        return redirect()->route('bazar_menus.index');
     }
 
     /**
@@ -106,6 +106,6 @@ class BazarMenusController extends Controller
         
         Flash::success('The BazarMenu has been Deleted Successfully');
 
-        return redirect('/bazar_menus');
+        return redirect()->back();
     }
 }

@@ -31,16 +31,16 @@
                 </div>
             </li>
             <li class="selected">
-                <a href="{{url('/dashboard')}}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
+                <a href="{{route('dashboard.index')}}"><i class="fa fa-dashboard fa-fw"></i>Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-user fa-fw"></i> Collection<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/collections')}}"><i class="fa fa-list"></i>All Collection</a>
+                        <a href="{{route('collections.index')}}"><i class="fa fa-list"></i>All Collection</a>
                     </li>
                     <li>
-                        <a href="{{url('/collections/create')}}"><i class="fa fa-plus"></i>Add Collection</a>
+                        <a href="{{route('collections.create')}}"><i class="fa fa-plus"></i>Add Collection</a>
                     </li>
 
                 </ul>
@@ -50,10 +50,10 @@
                 <a href="#"><i class="fa fa-clock-o fa-fw"></i> Menu<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/bazar_menus')}}"><i class="fa fa-plus"></i>All Bazar Menu </a>
+                        <a href="{{route('bazar_menus.index')}}"><i class="fa fa-plus"></i>All Bazar Menu </a>
                     </li>                            
                     <li>
-                        <a href="{{url('/bazar_menus/create')}}"><i class="fa fa-list"></i>Add Menu</a>
+                        <a href="{{route('bazar_menus.create')}}"><i class="fa fa-list"></i>Add Menu</a>
                     </li>
                 </ul>
             </li> 
@@ -62,10 +62,10 @@
                 <a href="#"><i class="fa fa-building-o fa-fw"></i> Extra Item<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/extra_items')}}"><i class="fa fa-list"></i>All Extra Item </a>
+                        <a href="{{route('extra_items.index')}}"><i class="fa fa-list"></i>All Extra Item </a>
                     </li>
                     <li>
-                        <a href="{{url('/extra_items/create')}}"><i class="fa fa-plus"></i>Add Extra Item </a>
+                        <a href="{{route('extra_items.create')}}"><i class="fa fa-plus"></i>Add Extra Item </a>
 
                     </li>
                 </ul>
@@ -75,10 +75,10 @@
                 <a href="#"><i class="fa fa-money fa-fw"></i>Additional<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/additionals')}}"><i class="fa fa-list"></i> All Additional</a>
+                        <a href="{{route('additionals.index')}}"><i class="fa fa-list"></i> All Additional</a>
                     </li>
                     <li>
-                        <a href="{{url('/additionals/create')}}"><i class="fa fa-plus"></i> Add Additional</a>
+                        <a href="{{route('additionals.create')}}"><i class="fa fa-plus"></i> Add Additional</a>
                     </li> 
                 </ul>                           
             </li>
@@ -87,10 +87,10 @@
                 <ul class="nav nav-second-level">
 
                     <li>
-                        <a href="{{url('/meals')}}"><i class="fa fa-plus"></i> Meal List</a>
+                        <a href="{{route('meals.index')}}"><i class="fa fa-plus"></i> Meal List</a>
                     </li>
                     <li>
-                        <a href="{{url('/meals/create')}}"><i class="fa fa-list"></i> Meal Add</a>
+                        <a href="{{route('meals.create')}}"><i class="fa fa-list"></i> Meal Add</a>
                     </li>                            
                 </ul>
             </li>
@@ -99,10 +99,10 @@
                 <a href="#"><i class="fa fa-building-o fa-fw"></i> Bazar<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/bazars')}}"><i class="fa fa-list"></i>All Bazar </a>
+                        <a href="{{route('bazars.index')}}"><i class="fa fa-list"></i>All Bazar </a>
                     </li>
                     <li>
-                        <a href="{{url('/bazars/create')}}"><i class="fa fa-plus"></i>Add Bazar </a>
+                        <a href="{{route('bazars.create')}}"><i class="fa fa-plus"></i>Add Bazar </a>
 
                     </li>
                 </ul>
@@ -112,10 +112,10 @@
                 <a href="#"><i class="fa fa-building-o fa-fw"></i>Bazar Details<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/bazar_details')}}"><i class="fa fa-list"></i>All Bazar Detail</a>
+                        <a href="{{route('bazar_details.index')}}"><i class="fa fa-list"></i>All Bazar Detail</a>
                     </li>
                     <li>
-                        <a href="{{url('/bazar_details/create')}}"><i class="fa fa-plus"></i>Add Bazar Detail </a>
+                        <a href="{{route('bazar_details.create')}}"><i class="fa fa-plus"></i>Add Bazar Detail </a>
 
                     </li>
                 </ul>
@@ -125,10 +125,10 @@
                 <a href="#"><i class="fa fa-building-o fa-fw"></i> Month<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a href="{{url('/months')}}"><i class="fa fa-list"></i> Month list</a>
+                        <a href="{{route('months.index')}}"><i class="fa fa-list"></i> Month list</a>
                     </li>
                     <li>
-                        <a href="{{url('/months/create')}}"><i class="fa fa-plus"></i>  Month Add </a>
+                        <a href="{{route('months.create')}}"><i class="fa fa-plus"></i>  Month Add </a>
 
                     </li>
                 </ul>
@@ -138,10 +138,10 @@
                 <ul class="nav nav-second-level">
 
                     <li>
-                        <a href="{{url('/users')}}"><i class="fa fa-plus"></i> All User </a>
+                        <a href="{{route('users.index')}}"><i class="fa fa-plus"></i> All User </a>
                     </li>
                     <li>
-                        <a href="{{url('/users/create')}}"><i class="fa fa-plus"></i> Add User </a>
+                        <a href="{{route('users.create')}}"><i class="fa fa-plus"></i> Add User </a>
                     </li>
                 </ul>
             </li>

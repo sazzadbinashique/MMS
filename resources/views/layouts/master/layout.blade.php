@@ -29,6 +29,15 @@
         <!-- end navbar side -->
         <!--  page-wrapper -->
         <div id="page-wrapper">
+{{--            @if($errors->count() > 0)--}}
+{{--                <ul class="list-group">--}}
+{{--                    @foreach($errors->all() as $error)--}}
+{{--                        <li class="list-group-item text-danger">--}}
+{{--                            {{ $error }}--}}
+{{--                        </li>--}}
+{{--                    @endforeach--}}
+{{--                </ul>--}}
+{{--            @endif--}}
 
             @yield('content')
 
@@ -51,7 +60,8 @@
     <!-- <script src="{{asset('assets/plugins/morris/morris.js')}}"></script> -->
     <!-- <script src="{{asset('assets/scripts/dashboard-demo.js')}}"></script> -->
     @yield('piechart-script')
-    
+    @yield('add-more')
+
 </body>
 
 </html>

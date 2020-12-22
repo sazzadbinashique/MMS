@@ -50,7 +50,7 @@ class CollectionsController extends Controller
         Collection::create($input);
 
         Flash::success('The collection has been created successfully');
-        return redirect('/collections');
+        return redirect()->route('collections.index');
     }
 
     /**
@@ -93,7 +93,7 @@ class CollectionsController extends Controller
         $collection->update($input);
 
         Flash::success('Collection has been updated Succesfully');
-        return redirect('/collections');
+        return redirect()->route('collections.index');
 
     }
 
@@ -108,7 +108,7 @@ class CollectionsController extends Controller
         $collection = Collection::findOrFail($id)->delete();
 
         Flash::error('Collection has been Deleted Succesfully');
-        return redirect('/collections');
+        return redirect()->back();
 
 
     }

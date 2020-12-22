@@ -18,7 +18,6 @@ class UsersController extends Controller
     {
         $users = User::all();
 
-        // dd($users);
 
         return view('layouts.user.index', compact('users'));
     }
@@ -60,7 +59,7 @@ class UsersController extends Controller
          // $user->password =bcrypt($request->name);
          // $user->save();
 
-         return redirect('/users');
+         return redirect()->route('users.index');
 
     }
 
@@ -109,9 +108,9 @@ class UsersController extends Controller
             $input['password']=bcrypt($request->password);            
          }
 
-          $user->update($input);  
+          $user->update($input);
 
-          return redirect('/users');
+        return redirect()->route('users.index');
         
     }
 
@@ -125,6 +124,6 @@ class UsersController extends Controller
     {
         $user = User::findOrFail($id)->delete();
 
-        return redirect('/users');
+        return redirect()->back();
     }
 }

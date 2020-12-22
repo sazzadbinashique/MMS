@@ -45,13 +45,12 @@ class AdditionalsController extends Controller
     public function store(CreateAdditionalRequest $request)
     {
         $input = $request->all();
-        // dd($input);
 
         Additional::create($input);
         // dd($input);
 
         Flash::success('Additional has been Created Successfully');
-        return redirect('/additionals');
+        return redirect()->route('additionals.index');
     }
 
     /**
@@ -93,8 +92,8 @@ class AdditionalsController extends Controller
         $input = $request->all();
         $additional->update($input);
 
-        Flash::success('Additional has been Updated Successfully'); 
-        return redirect('/additionals');
+        Flash::success('Additional has been Updated Successfully');
+        return redirect()->route('additionals.index');
 
     }
 
@@ -108,6 +107,6 @@ class AdditionalsController extends Controller
     {
         $additional = Additional::findOrFail($id)->delete();
         Flash::error('Additional has been Deleted Successfully');
-        return redirect('/additionals');
+        return redirect()->back();
     }
 }

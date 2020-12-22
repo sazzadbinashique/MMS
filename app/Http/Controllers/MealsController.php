@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateMealRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateMealRequest;
 use App\Meal;
 use App\User;
 use Flash;
 use Illuminate\Support\Facades\Input;
+//use Laracasts\Flash\Flash;
 use Session;
 
 class MealsController extends Controller
@@ -46,14 +48,22 @@ class MealsController extends Controller
      */
     public function store(CreateMealRequest $request)
     {
-
-        $input = $request->all();
+        $inputs = $request->all();
         $date_exits = Meal::where([['user_id', '=',Input::get('user_id')],['date', '=', Input::get('date')]])->first();
         if ($date_exits === null) {
-            Meal::create($input);
+            foreach ($request->user_id as $key=>$input){
+                    Meal::create([
+                        'user_id'=>$request->user_id[$key],
+                        'braekfast'=>$request->braekfast[$key],
+                        'lanch'=>$request->lanch[$key],
+                        'dinner'=>$request->dinner[$key],
+                        'date'=>$request->date[$key],
+                    ]);
+                }
+
             Flash::success('Meal has been Created Succesfully');
 
-            return redirect('/meals');
+            return redirect()->route('meals.index');
         }
 
         Flash::success('Already Date has been Created Succesfully');
@@ -102,13 +112,13 @@ class MealsController extends Controller
             $meal->update($input);
             Flash::success('Meal has been Updated Succesfully');
 
-            return redirect('/meals');
+            return redirect()->route('meals.index');
         }
 
 
         Flash::success('Already User date has been Created Succesfully');
 
-        return redirect('/meals');
+        return redirect()->back('meals.index');
 
     }
 
@@ -123,6 +133,6 @@ class MealsController extends Controller
         $meal= Meal::findOrFail($id)->delete();
 
         Flash::error('Meal has been Deleted Succesfully');
-        return redirect('/meals');
+        return redirect()->back();
     }
 }

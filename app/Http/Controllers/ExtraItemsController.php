@@ -45,7 +45,7 @@ class ExtraItemsController extends Controller
         ExtraItem::create($input);
 
         Flash::success('ExtraItem has been Created successfully');
-        return redirect('/extra_items');
+        return redirect()->back('extra_items.index');
     }
 
     /**
@@ -89,7 +89,7 @@ class ExtraItemsController extends Controller
 
         Flash::success('ExtraItem has been Updated successfully');
 
-        return redirect('/extra_items');
+        return redirect()->back('extra_items.index');
     }
 
     /**
@@ -104,7 +104,7 @@ class ExtraItemsController extends Controller
 
         Flash::error('ExtraItem Has Been Deleted successfully');
 
-        return redirect('/extra_items');
+        return redirect()->back();
 
 
     }

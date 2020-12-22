@@ -18,7 +18,7 @@
             <div class="panel-heading">
                 <h3>Meal List</h3>
                 <div class="">
-                    <a href="{{url('/meals/create')}}" class="btn btn-primary">Add Meal</a>
+                    <a href="{{route('meals.create')}}" class="btn btn-primary">Add Meal</a>
                 </div>
             </div>
 

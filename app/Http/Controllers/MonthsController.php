@@ -45,7 +45,7 @@ class MonthsController extends Controller
         Month::create($input);
 
         Flash::success('Month has been Create Successfully');
-        return redirect('/months');
+        return redirect()->route('months.index');
     }
 
     /**
@@ -86,7 +86,7 @@ class MonthsController extends Controller
         $month->update($input);
 
         Flash::success('Month has been Updated Successfully');
-        return redirect('/months');
+        return redirect()->route('months.index');
     }
 
     /**
@@ -101,7 +101,7 @@ class MonthsController extends Controller
 
         Flash::error('Month Has been Deleted Successfully'); 
 
-        return redirect('/months');
+        return redirect()->back();
 
     }
 }
